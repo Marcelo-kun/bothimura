@@ -20,6 +20,13 @@ def send_welkome(message):
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un ChatBot informativo de la Universidad Gran Asuncion, en que puedo ayudarte?")
 
+@bot.message_handler(content_types=['text'])
+def send_text(message):
+    if message.text.lower() == 'hola':
+        bot.send_message(message.chat.id, 'Hola, en que puedo ayudarte?')
+    elif message.text.lower() == 'Gracias':
+        bot.send_message(message.chat.id, 'Gracias a usted por utilizar el sistema de consulta Bot de Telegram!')
+
 @bot.message_handler(commands=['botones'])
 def send_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""
