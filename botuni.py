@@ -3,8 +3,8 @@ from requests import post, request
 import telebot
 from flask import Flask, request
 import os
-from telebot.types import InlinekeyboardMarkup
-from telebot.types import InlinekeyboardButton
+"""from telebot.types import InlinekeyboardMarkup
+from telebot.types import InlinekeyboardButton"""""
 
 
 API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
@@ -27,15 +27,15 @@ def send_text(message):
     elif message.text.lower() == 'Gracias':
         bot.send_message(message.chat.id, 'Gracias a usted por utilizar el sistema de consulta Bot de Telegram!')"""
 
-@bot.message_handler(commands=['botones'])
-def cmd_botones(message):
-    """Muestra un mensaje con botones inline (a continuacion del mensaje)"""""
-    markup = InlinekeyboardMarkup(row_width = 2)
+"""@bot.message_handler(commands=['botones'])
+def cmd_botones(message):"""
+"""Muestra un mensaje con botones inline (a continuacion del mensaje)"""
+""" markup = InlinekeyboardMarkup(row_width = 2)
     b1 = InlinekeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
     b2 = InlinekeyboardButton("UNIGRAN WEB", url="https://www.unigran.edu.py/")
     b3 = InlinekeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
     markup.add(b1, b2, b3)
-    bot.send_message(message.chat.id, "Enlaces que pueden intereasarte", reply_markup=markup)
+    bot.send_message(message.chat.id, "Enlaces que pueden intereasarte", reply_markup=markup)"""
 
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
