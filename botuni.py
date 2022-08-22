@@ -3,8 +3,8 @@ from requests import post, request
 import telebot
 from flask import Flask, request
 import os
-"""from telebot.types import InlinekeyboardMarkup   #para crear botonera inline
-from telebot.types import InlinekeyboardButton   #para definir botones inline"""
+from telebot.types import InlinekeyboardMarkup   #para crear botonera inline
+from telebot.types import InlinekeyboardButton   #para definir botones inline
 
 
 API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
@@ -18,24 +18,24 @@ def send_welkome(message):
 
 @bot.message_handler(commands=['Hola'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola Belen ;)")
+    bot.reply_to(message, "Hola, soy un ChatBot informativo de la Universidad Gran Asuncion, en que puedo ayudarte?")
 
 """@bot.message_handler(content_types=['text'])
 def send_text(message):
     if message.text.lower() == 'hola':
         bot.send_message(message.chat.id, 'Hola, en que puedo ayudarte?')
     elif message.text.lower() == 'Gracias':
-        bot.send_message(message.chat.id, 'Gracias a usted por utilizar el sistema de consulta Bot de Telegram!')
+        bot.send_message(message.chat.id, 'Gracias a usted por utilizar el sistema de consulta Bot de Telegram!')"""
 
 @bot.message_handler(commands=['botones'])
 def send_botones(message):
-    ""Muestra un mensaje con botones inline (a continuacion del mensaje)""
+    """Muestra un mensaje con botones inline (a continuacion del mensaje)"""""
     markup = InlinekeyboardMarkup(row_width = 2) #nro de botones en cada fila, 3 por defecto
     b1 = InlinekeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
     b2 = InlinekeyboardButton("UNIGRAN WEB", url="https://www.unigran.edu.py/")
     b3 = InlinekeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
     markup.add(b1, b2, b3)
-    bot.send_message(message.chat.id, "Enlaces que pueden intereasarte", reply_markup=markup)"""
+    bot.send_message(message.chat.id, "Enlaces que pueden intereasarte", reply_markup=markup)
 
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
