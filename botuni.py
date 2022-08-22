@@ -3,8 +3,9 @@ from requests import post, request
 import telebot
 from flask import Flask, request
 import os
-from telebot.types import InlinekeyboardMarkup   #para crear botonera inline
-from telebot.types import InlinekeyboardButton   #para definir botones inline
+import sys
+"""from telebot.types import InlinekeyboardMarkup   #para crear botonera inline
+from telebot.types import InlinekeyboardButton   #para definir botones inline"""
 
 
 API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
@@ -28,7 +29,7 @@ def send_text(message):
         bot.send_message(message.chat.id, 'Gracias a usted por utilizar el sistema de consulta Bot de Telegram!')"""
 
 @bot.message_handler(commands=['botones'])
-def send_botones(message):
+def cmd_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""""
     markup = InlinekeyboardMarkup(row_width = 2) #nro de botones en cada fila, 3 por defecto
     b1 = InlinekeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
