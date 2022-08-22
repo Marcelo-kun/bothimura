@@ -18,7 +18,7 @@ def send_welkome(message):
 
 @bot.message_handler(commands=['Hola'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un ChatBot informativo de la Universidad Gran Asuncion, en que puedo ayudarte?")
+    bot.reply_to(message, "Hola Belen ;)")
 
 """@bot.message_handler(content_types=['text'])
 def send_text(message):
