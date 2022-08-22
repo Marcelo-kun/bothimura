@@ -3,9 +3,8 @@ from requests import post, request
 import telebot
 from flask import Flask, request
 import os
-import sys
-"""from telebot.types import InlinekeyboardMarkup   #para crear botonera inline
-from telebot.types import InlinekeyboardButton   #para definir botones inline"""
+from telebot.types import InlinekeyboardMarkup
+from telebot.types import InlinekeyboardButton
 
 
 API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
@@ -31,7 +30,7 @@ def send_text(message):
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""""
-    markup = InlinekeyboardMarkup(row_width = 2) #nro de botones en cada fila, 3 por defecto
+    markup = InlinekeyboardMarkup(row_width = 2)
     b1 = InlinekeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
     b2 = InlinekeyboardButton("UNIGRAN WEB", url="https://www.unigran.edu.py/")
     b3 = InlinekeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
