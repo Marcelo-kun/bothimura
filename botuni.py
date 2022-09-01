@@ -18,7 +18,7 @@ def send_welkome(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
     if message.text.lower() == 'hola':
-        bot.send_message(message.chat.id, 'Hola, presiona el comando /botones si quieres conocer algunos enlaces a paginas de la Universidad')
+        bot.send_message(message.chat.id, 'Hola, presiona el comando ¨/botones¨ si quieres conocer algunos enlaces a paginas de la Universidad')
     elif message.text.lower() == 'Gracias':
         bot.send_message(message.chat.id, 'Gracias a usted por utilizar el sistema de consulta Bot de Telegram!')
 
