@@ -1,4 +1,3 @@
-"""from crypt import methods"""
 from requests import post, request
 import telebot
 from flask import Flask, request
@@ -14,11 +13,7 @@ server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
-    bot.reply_to(message, "Bienvenido/a al Bot")
-
-@bot.message_handler(commands=['Hola'])
-def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un ChatBot informativo de la Universidad Gran Asuncion, en que puedo ayudarte?")
+    bot.reply_to(message, "Hola, soy un ChatBot informativo de la Universidad Gran Asuncion")
 
 @bot.message_handler(content_types=['text'])
 def send_text(message):
