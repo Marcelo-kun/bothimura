@@ -11,19 +11,18 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start', 'botones'])
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un ChatBot informativo de la Universidad Gran Asuncion")
 
+# responde a los mensajes de texto que no son comandos
 @bot.message_handler(content_types=['text'])
 def send_text(message):
-    message.text.lower() == 'hola'
-    bot.send_message(message.chat.id, 'Hola, presiona el comando /botones si quieres conocer algunos enlaces a paginas de la Universidad')
+    if message.text.startswith("/"):
+       bot.send_message(message.chat.id, "Hola, este comando no esta disponoble")
+    else:
+       bot.send_message(message.chat.id, "Hola, te recomiendo los siguientes comandos para consultar informacion y conocer un poco más acerca de la Universidad Gran Asunción") 
 
-@bot.message_handler(content_types=['text'])
-def send_text(message):    
-    message.text.lower() == 'Gracias'
-    bot.send_message(message.chat.id, 'Gracias a usted por utilizar el sistema de consulta Bot de Telegram!')
 
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
