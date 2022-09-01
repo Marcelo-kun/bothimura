@@ -11,18 +11,9 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-@bot.message_handler(commands=['start', 'botones'])
+@bot.message_handler(commands=['start'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un ChatBot informativo de la Universidad Gran Asuncion")
-
-# responde a los mensajes de texto que no son comandos
-@bot.message_handler(content_types=['text'])
-def send_text(message):
-    if message.text.startswith("/"):
-       bot.send_message(message.chat.id, "Hola, este comando no esta disponoble")
-    else:
-       bot.send_message(message.chat.id, "Hola, te recomiendo los siguientes comandos para consultar informacion y conocer un poco más acerca de la Universidad Gran Asunción") 
-
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")
 
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
@@ -32,7 +23,7 @@ def cmd_botones(message):
     b2 = InlineKeyboardButton("UNIGRAN WEB", url="https://www.unigran.edu.py/")
     b3 = InlineKeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
     markup.add(b1, b2, b3)
-    bot.send_message(message.chat.id, "Enlaces que pueden intereasarte", reply_markup=markup)
+    bot.send_message(message.chat.id, "Enlaces que pueden intereasarte 🎓", reply_markup=markup)
 
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
