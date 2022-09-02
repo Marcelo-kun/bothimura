@@ -1,7 +1,7 @@
 import types
 from requests import post, request
 import telebot
-from flask import Flask, request
+from flask import Flask, request, request_started
 import os
 from telebot.types import InlineKeyboardMarkup
 from telebot.types import InlineKeyboardButton
@@ -28,7 +28,7 @@ def send_welkome(message):
 
 @bot.message_handler(commands=['info'])
 def info(message):
-    bot.reply_to(message, "Say something about you:", reply_markup=keyboard2)
+    bot.reply_to(message, "Informacion sobre ti:", reply_markup=keyboard2)
 
 @bot.message_handler()
 def kb_answer(message):
@@ -48,7 +48,7 @@ def cmd_botones(message):
     b2 = InlineKeyboardButton("UNIGRAN WEB", url="https://www.unigran.edu.py/")
     b3 = InlineKeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
     markup.add(b1, b2, b3)
-    bot.send_message(message.chat.id, "Enlaces que pueden intereasarte 🎓Haz click en el botón", reply_markup=markup)
+    bot.reply_to(message.chat.id, "Enlaces que pueden intereasarte 🎓Haz click en el botón", reply_markup=markup)
 
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
