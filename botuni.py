@@ -28,7 +28,7 @@ def send_welkome(message):
 
 @bot.message_handler(commands=['info'])
 def info(message):
-    message.reply('Say something about you:', reply_markup=keyboard2)
+    bot.reply_to(message, "Say something about you:", reply_markup=keyboard2)
 
 @bot.message_handler()
 def kb_answer(message):
