@@ -6,6 +6,7 @@ import os
 from telebot.types import InlineKeyboardMarkup
 from telebot.types import InlineKeyboardButton
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+from logging import logger
 
         
 
@@ -38,6 +39,22 @@ def kb_answer(message):
         message.answer('mira mas tutoriales')
     else:
         message.answer(f' Your message is: {message.text}')
+
+def Menu(update, context):
+    bot = context.bot
+    resize_keyboard=True
+    ChatId = update.message.chat_id
+    userName = update.effective_user["first_name"]
+    logger.info(f'El Usuario {userName} Id:{ChatId} ah accedido al menu')
+    keyboard = []
+    keyboard.append([KeyboardButton(f'Informacion sobre el bot', callback_data='1')])
+    keyboard.append([KeyboardButton(f'Mi WhatsApp', callback_data='2')])
+    keyboard.append([KeyboardButton(f'Lista', callback_data='3')])
+    keyboard.append([KeyboardButton(f'Bot para WA', callback_data='4')])
+    keyboard.append([KeyboardButton(f'Redes Sociales', callback_data='5')])
+    keyboard.append([KeyboardButton(f'Cafe?', callback_data='6')])
+    reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True, resize_keyboard=True)
+    update.message.reply_text('*****Menu*****\nElige una de las siguientes opciones:',  reply_markup=reply_markup)
 
 
 @bot.message_handler(commands=['botones'])
