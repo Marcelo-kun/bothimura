@@ -14,7 +14,7 @@ server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion, presiona el comando /carreras para conocer los detalles que ofrece este Bot en cada una de las opciones que eligas y desees conocer:")
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad")
 
 
 @bot.message_handler(commands=['carreras'])
