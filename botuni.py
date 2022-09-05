@@ -22,7 +22,7 @@ def send_welkome(message):
 def cmd_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""
     markup = InlineKeyboardMarkup(row_width = 2)
-    b1 = InlineKeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
+    b1 = InlineKeyboardButton("UGA Radio", text="http://ugaradio.com.py/")
     b2 = InlineKeyboardButton("UNIGRAN WEB", url="https://www.unigran.edu.py/")
     b3 = InlineKeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
     markup.add(b1, b2, b3)
