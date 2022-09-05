@@ -14,14 +14,6 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-@bot.message_handler()
-def kb_answer(message):
-    if message.text == 'Hola':
-        message.answer('Hola, sigue asi')
-    else:
-        message.answer('Cualquier consulra, digite los comandos')
-
-
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")
