@@ -1,3 +1,5 @@
+from cgitb import text
+from tkinter import Button
 from requests import request
 import telebot
 from flask import Flask, request
@@ -18,6 +20,27 @@ server = Flask(__name__)
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")
 
+def start(update, context):
+    button1 = InlineKeyboardButton(
+        text = 'Sobre el autor',
+        url = 'https://www.youtube.com/watch?v=DBoWGTO4TaU&t=824s'
+    )
+
+    button2 = InlineKeyboardButton(
+        text = 'Twitter',
+        url = 'https://www.youtube.com/watch?v=DBoWGTO4TaU&t=824s'
+    )
+
+    update.message.reply.text(
+        text='Haz click en un boton',
+        reply_markup=InlineKeyboardMarkup([
+            [button1],
+            [button2]
+        ])
+    )
+
+    
+
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""
@@ -28,11 +51,11 @@ def cmd_botones(message):
     markup.add(b1, b2, b3)
     bot.send_message(message.chat.id, "Enlaces que pueden intereasarte 🎓Haz click en el botón", reply_markup=markup)
 
-@bot.message_handler(commands=['consulta'])
+"""@bot.message_handler(commands=['consulta'])
 def consulta_message(message):
     keyboard = telebot.types.ReplyKeyboardMarkup(True)
     keyboard.row = ('Carreras')
-    bot.send_message(message.chat.id, 'Consulta1', reply_markup=keyboard.row)
+    bot.send_message(message.chat.id, 'Consulta1', reply_markup=keyboard)"""
 
 
 
