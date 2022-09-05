@@ -14,13 +14,13 @@ server = Flask(__name__)
 
 @bot.message_handler(commands=['start', 'Start'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion, presiona el comando /Ayuda para conocer las funciones y los detalles que ofrece este Bot")
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion, presiona el comando /Carreras para conocer los detalles que ofrece este Bot en cada una de las opciones que eligas y desees conocer")
 
 
 @bot.message_handler(commands=['Carreras', 'carreras'])
 def ayuda_command(message):
    keyboard = telebot.types.InlineKeyboardMarkup()
-   bot.send_message(message.chat.id, "Lista de Carreras de Grado que pueden interesarte 🎓", reply_markup=keyboard)
+   bot.send_message(message.chat.id, "Lista de Carreras de Grado que pueden interesarte 🎓")
 
    bot.send_message(
        message.chat.id,
