@@ -1,11 +1,10 @@
-import types
-from urllib import response
-from requests import post, request
+from requests import request
 import telebot
-from flask import Flask, request, request_started
+from flask import Flask, request
 import os
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+
 
 
         
@@ -15,13 +14,31 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
+@bot.message_handler(commands=['input'])
+def input(message):
+    texts = message.text.split(' ')
+    try:
+        user_id = texts[1]
+        first_name = texts[2]
+        last_name = texts[3]
+
+        insert = 'insert into usuarios (user_id,first_name,last_name) values (%s,%s,%s)'
+        val = user_id,first_name,last_name
+        sql.execute(insert,val)
+        mydb.commit()
+        
+        bot.reply_to(message,'Saved!')
+
+    except:
+        msg = bot.reply_to(message, """Error! Data Not Saved!. """)
+
 button1 = KeyboardButton('Hello')
 button2 = KeyboardButton('Youtube')
-keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False).add(button1).add(button2)
+keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1).add(button2)
 
 button3 = KeyboardButton('Hello' , request_contact=True)
 button4 = KeyboardButton('Youtube', request_contact=True)
-keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False).add(button3).add(button4)
+keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button3).add(button4)
 
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
@@ -31,14 +48,6 @@ def send_welkome(message):
 def info(message):
     bot.reply_to(message, "Informacion sobre ti:", reply_markup=keyboard2)
 
-@bot.message_handler()
-def kb_answer(message):
-    if message.text == 'Hello':
-        message.answer('Hola, sigue asi')
-    elif message.text == 'Youtube':
-        message.answer('mira mas tutoriales')
-    else:
-        message.answer(f' Your message is: {message.text}')
 
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
