@@ -29,7 +29,7 @@ def send_welkome(message):
 
 @bot.message_handler(commands=['info'])
 def info(message):
-    bot.reply_to(message, "Informacion sobre ti:", reply_markup=keyboard2)
+    bot.reply_to(message, "Informacion sobre ti:", reply_markup=keyboard1)
 
 @bot.message_handler()
 def kb_answer(message):
