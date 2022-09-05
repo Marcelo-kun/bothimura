@@ -1,6 +1,11 @@
+from ast import pattern
+from asyncore import dispatcher
 from cgitb import text
+from email.message import Message
 from tkinter import Button
+from click import command
 from requests import request
+from setuptools import Command
 import telebot
 from flask import Flask, request
 import os
@@ -16,25 +21,51 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-@bot.message_handler(commands=['start'])
-def start(update, context):
+
+button1 = KeyboardButton('Hello')
+button2 = KeyboardButton('Youtube')
+keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).row(button1, button2)
+
+button3 = KeyboardButton('Hello' , request_contact=True)
+button4 = KeyboardButton('Youtube', request_contact=True)
+keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).row(button3, button4)
+
+@bot.message_handler(commands=['start', 'help'])
+async def welcome(message):
+    await message.reply("Resultado 1", reply_markup=keyboard1)
+
+@bot.message_handler(commands=['info'])
+async def info(message):
+    await message.reply("Resultado 2 ", reply_markup=keyboard2)
+
+
+"""@bot.message_handler(commands=['start'])
+def send_welkome(message):
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")"""
+    
+
+
+"""def comand_callback_handler(update, context):
+    query = update.callback_query
+    query.answer()
+
+    query.edit_message_text(
+        text='Te envio un texto'
+    )
+    return INPUT_TEXT
+
+
     button1 = InlineKeyboardButton(
         text = 'Sobre el autor',
-        url = 'https://www.youtube.com/watch?v=DBoWGTO4TaU&t=824s'
-    )
-
-    button2 = InlineKeyboardButton(
-        text = 'Twitter',
         url = 'https://www.youtube.com/watch?v=DBoWGTO4TaU&t=824s'
     )
 
     update.message.reply.text(
         text='Haz click en un boton',
         reply_markup=InlineKeyboardMarkup([
-            [button1],
-            [button2]
+            [button1]
         ])
-    )
+    )"""
 
     
 
