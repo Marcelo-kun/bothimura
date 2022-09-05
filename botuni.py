@@ -6,7 +6,6 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 
-
         
 
 API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
@@ -17,6 +16,25 @@ server = Flask(__name__)
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")
     
+@bot.message_handler(commands=['help'])
+def help_command(message):
+   keyboard = telebot.types.InlineKeyboardMarkup()
+   keyboard.add(
+       telebot.types.InlineKeyboardButton(
+           'Message the developer', url='https://web.telegram.org/z/#5526189505'
+       )
+   )
+   bot.send_message(
+       message.chat.id,
+       '1) To receive a list of available currencies press /exchange.\n' +
+       '2) Click on the currency you are interested in.\n' +
+       '3) You will receive a message containing information regarding the source and the target currencies, ' +
+       'buying rates and selling rates.\n' +
+       '4) Click “Update” to receive the current information regarding the request. ' +
+       'The bot will also show the difference between the previous and the current exchange rates.\n' +
+       '5) The bot supports inline. Type @<botusername> in any chat and the first letters of a currency.',
+       reply_markup=keyboard
+   )
 
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
