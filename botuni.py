@@ -18,9 +18,9 @@ def send_welkome(message):
     
 @bot.message_handler(commands=['Ayuda'])
 def ayuda_command(message):
-   keyboard = telebot.types.ReplyKeyboardMarkup()
+   keyboard = telebot.types.InlineKeyboardMarkup()
    keyboard.add(
-       telebot.types.ReplyKeyboardButton(
+       telebot.types.InlineKeyboardButton(
            'Ante algun incoveniente, favor comunicar al Desarrollador', url='https://web.telegram.org/z/#5526189505'
        )
    )
