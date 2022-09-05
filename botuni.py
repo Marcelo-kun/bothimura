@@ -2,6 +2,7 @@ from ast import pattern
 from asyncore import dispatcher
 from cgitb import text
 from email.message import Message
+from smtplib import _Reply
 from tkinter import Button
 from click import command
 from requests import request
@@ -29,13 +30,13 @@ button3 = KeyboardButton('Hello' , request_contact=True)
 button4 = KeyboardButton('Youtube', request_contact=True)
 keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).row(button3, button4)
 
-@bot.message_handler(commands=['start', 'help'])
+@bot.message_handler(commands=['start'])
 def send_welcome(message):
-    message.reply("Resultado 1", reply_markup=keyboard1)
+    bot.reply_to(message=="Resultado 1", reply_markup=keyboard1)
 
 @bot.message_handler(commands=['info'])
 def info(message):
-    message.reply("Resultado 2 ", reply_markup=keyboard2)
+    bot.reply_to(message=="Resultado 2 ", reply_markup=keyboard2)
 
 
 """@bot.message_handler(commands=['start'])
