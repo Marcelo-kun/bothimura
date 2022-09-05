@@ -12,16 +12,16 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['Inicio'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion, presiona el comando /Ayuda para conocer las funciones y los detalles que ofrece este Bot")
     
-@bot.message_handler(commands=['help'])
-def help_command(message):
-   keyboard = telebot.types.InlineKeyboardMarkup()
+@bot.message_handler(commands=['Ayuda'])
+def ayuda_command(message):
+   keyboard = telebot.types.ReplyKeyboardMarkup()
    keyboard.add(
-       telebot.types.InlineKeyboardButton(
-           'Message the developer', url='https://web.telegram.org/z/#5526189505'
+       telebot.types.ReplyKeyboardButton(
+           'Ante algun incoveniente, favor comunicar al Desarrollador', url='https://web.telegram.org/z/#5526189505'
        )
    )
    bot.send_message(
