@@ -14,8 +14,6 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-button1 = KeyboardButton('cuotas')
-keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1)
 
 @bot.message_handler(commands=['cuotas'])
 def send_cuotas(message):
