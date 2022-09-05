@@ -21,14 +21,6 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-@bot.message_handler(commands=['start', 'help'])
-def send_welcome(message):
-    bot.reply_to("Resultado 1", reply_markup=keyboard1)
-
-@bot.message_handler(commands=['info'])
-def info(message):
-    bot.reply_to("Resultado 2 ", reply_markup=keyboard2)
-
 button1 = KeyboardButton('Hello')
 button2 = KeyboardButton('Youtube')
 keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).row(button1, button2)
@@ -37,7 +29,13 @@ button3 = KeyboardButton('Hello' , request_contact=True)
 button4 = KeyboardButton('Youtube', request_contact=True)
 keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).row(button3, button4)
 
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(message):
+    bot.reply_to("Resultado 1", reply_markup=keyboard1)
 
+@bot.message_handler(commands=['info'])
+def info(message):
+    bot.reply_to("Resultado 2 ", reply_markup=keyboard2)
 
 
 """@bot.message_handler(commands=['start'])
