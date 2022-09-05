@@ -21,8 +21,8 @@ def send_welkome(message):
 def carreras_command(message):
    keyboard = telebot.types.InlineKeyboardMarkup()
    keyboard.add(
-        telebot.types.InlineKeyboardButton(
-        'Lista de Carreras de Grado que pueden interesarte 🎓', url='telegram.me/artiomtb'
+       telebot.types.InlineKeyboardButton(
+           'Lista de Carreras de Grado que pueden interesarte 🎓', url='telegram.me/artiomtb'
        )
    )
    bot.send_message(
@@ -37,28 +37,7 @@ def carreras_command(message):
        '8) Licenciatura en Psicología',
        reply_markup=keyboard
    )
-   
 
-
-"""@bot.message_handler(commands=['Ayuda', 'help', 'ayuda'])
-def ayuda_command(message):
-   keyboard = telebot.types.InlineKeyboardMarkup()
-   keyboard.add(
-       telebot.types.InlineKeyboardButton(
-           'Quieres conocer un poco mas Unigran? Click Aquí', url='https://www.unigran.edu.py/'
-       )
-   )
-   bot.send_message(
-       message.chat.id,
-       '1) Para conocer nuestras redes sociales y otros enlaces de interes te dejamos estos 👉 /botones \n' +
-       '2) \n' +
-       '3) You will receive a message containing information regarding the source and the target currencies, ' +
-       'buying rates and selling rates.\n' +
-       '4) Click “Update” to receive the current information regarding the request. ' +
-       'The bot will also show the difference between the previous and the current exchange rates.\n' +
-       '5) The bot supports inline. Type @<botusername> in any chat and the first letters of a currency.',
-       reply_markup=keyboard
-   )"""
 
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
