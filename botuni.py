@@ -3,7 +3,7 @@ from requests import post, request
 import telebot
 from flask import Flask, request, request_started
 import os
-from telebot.types import InlineKeyboardMarkup, InlineKeyboardMarkup
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 
@@ -39,6 +39,7 @@ def kb_answer(message):
     else:
         message.answer(f' Your message is: {message.text}')
 
+@bot.message_handler(commands=['menu'])
 def Menu(update, context):
     keyboard = []
     keyboard.append([KeyboardButton(f'Informacion sobre el bot', callback_data='1')])
