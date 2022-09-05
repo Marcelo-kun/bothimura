@@ -1,4 +1,5 @@
 import types
+from urllib import response
 from requests import post, request
 import telebot
 from flask import Flask, request, request_started
@@ -18,7 +19,7 @@ button1 = KeyboardButton('Hello')
 button2 = KeyboardButton('Youtube')
 keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1).add(button2)
 
-button3 = KeyboardButton('Hello', request_contact=True)
+button3 = KeyboardButton("hola que tal estas")
 button4 = KeyboardButton('Youtube', request_contact=True)
 keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button3).add(button4)
 
@@ -40,7 +41,7 @@ def kb_answer(message):
         message.answer(f' Your message is: {message.text}')
 
 @bot.message_handler(commands=['menu'])
-def Menu(update, context):
+def menu(message):
     keyboard = []
     keyboard.append([KeyboardButton(f'Informacion sobre el bot', callback_data='1')])
     keyboard.append([KeyboardButton(f'Mi WhatsApp', callback_data='2')])
