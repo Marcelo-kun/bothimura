@@ -15,17 +15,6 @@ bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
 
-@bot.message_handler(commands=['cuotas'])
-def send_cuotas(message):
-    """Muestra un mensaje con botones"""
-    markup1 = KeyboardButton(row_width = 2)
-    bo1 = KeyboardButton("Ing. Informatica", text="500.000")
-    bo2 = KeyboardButton("Ing. Comercial", text="400.000")
-    bo3 = KeyboardButton("Marketing", text="300.000")
-    markup1.add(bo1, bo2, bo3)
-    bot.send_message(message.chat.id, "🎓Haz click en un botón", reply_markup=markup1)
-
-
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")
@@ -36,7 +25,7 @@ def send_welkome(message):
 def cmd_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""
     markup = InlineKeyboardMarkup(row_width = 2)
-    b1 = InlineKeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
+    b1 = InlineKeyboardButton("UGA Radio", text="http://ugaradio.com.py/")
     b2 = InlineKeyboardButton("UNIGRAN WEB", url="https://www.unigran.edu.py/")
     b3 = InlineKeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
     markup.add(b1, b2, b3)
