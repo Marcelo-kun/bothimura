@@ -17,9 +17,6 @@ bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
-def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")
-
 def start(update, context):
     button1 = InlineKeyboardButton(
         text = 'Sobre el autor',
