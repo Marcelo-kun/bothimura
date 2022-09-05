@@ -15,35 +15,57 @@ server = Flask(__name__)
 @bot.message_handler(commands=['start', 'Start'])
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion, presiona el comando /Ayuda para conocer las funciones y los detalles que ofrece este Bot")
-    
-@bot.message_handler(commands=['Ayuda', 'help', 'ayuda'])
+
+
+@bot.message_handler(commands=['Carreras', 'carreras'])
+def ayuda_command(message):
+   keyboard = telebot.types.InlineKeyboardMarkup()
+   bot.send_message(message.chat.id, "Lista de Carreras de Grado que pueden interesarte 🎓", reply_markup=keyboard)
+
+   bot.send_message(
+       message.chat.id,
+       '1) Derecho 👉 /botones \n' +
+       '2) Ingeniería Comercial \n' +
+       '3) Ingeniería en Informática \n' +
+       '4) Ingeniería en Marketing y Publicidad\n' +
+       '5) Licenciatura en Ciencias Contables',
+       '6) Licenciatura en Ciencias de la Educación',
+       '7) Licenciatura en Enfermería',
+       '8) Licenciatura en Psicología',
+       reply_markup=keyboard
+   )
+   
+
+
+"""@bot.message_handler(commands=['Ayuda', 'help', 'ayuda'])
 def ayuda_command(message):
    keyboard = telebot.types.InlineKeyboardMarkup()
    keyboard.add(
        telebot.types.InlineKeyboardButton(
-           'Ante algun incoveniente, favor comunicar al Desarrollador', url='https://web.telegram.org/z/#5526189505'
+           'Quieres conocer un poco mas Unigran? Click Aquí', url='https://www.unigran.edu.py/'
        )
    )
    bot.send_message(
        message.chat.id,
-       '1) To receive a list of available currencies press /exchange.\n' +
-       '2) Click on the currency you are interested in.\n' +
+       '1) Para conocer nuestras redes sociales y otros enlaces de interes te dejamos estos 👉 /botones \n' +
+       '2) \n' +
        '3) You will receive a message containing information regarding the source and the target currencies, ' +
        'buying rates and selling rates.\n' +
        '4) Click “Update” to receive the current information regarding the request. ' +
        'The bot will also show the difference between the previous and the current exchange rates.\n' +
        '5) The bot supports inline. Type @<botusername> in any chat and the first letters of a currency.',
        reply_markup=keyboard
-   )
+   )"""
 
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""
-    markup = InlineKeyboardMarkup(row_width = 2)
+    markup = InlineKeyboardMarkup(row_width = 5)
     b1 = InlineKeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
-    b2 = InlineKeyboardButton("UNIGRAN WEB", url="https://www.unigran.edu.py/")
+    b2 = InlineKeyboardButton("Aula Virtual", url="https://grado.unigran.edu.py/")
     b3 = InlineKeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
-    markup.add(b1, b2, b3)
+    b4 = InlineKeyboardButton("UNIGRAN INSTAGRAM", url="https://instagram.com/unigranpy?igshid=YmMyMTA2M2Y=")
+    markup.add(b1, b2, b3, b4)
     bot.send_message(message.chat.id, "Enlaces que pueden intereasarte 🎓Haz click en el botón", reply_markup=markup)
 
 
