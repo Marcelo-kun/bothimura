@@ -31,7 +31,8 @@ def cmd_botones(message):
 @bot.message_handler(commands=['consulta'])
 def consulta_message(message):
     keyboard = telebot.types.ReplyKeyboardMarkup(True)
-    bot.send_message(message.chat.id, 'Consulta1', reply_markup=keyboard)
+    keyboard.row = ('Carreras')
+    bot.send_message(message.chat.id, 'Consulta1', reply_markup=keyboard.row)
 
 
 
