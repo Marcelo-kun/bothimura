@@ -18,10 +18,13 @@ def send_welkome(message):
 
 
 @bot.message_handler(commands=['Carreras', 'carreras'])
-def ayuda_command(message):
+def carreras_command(message):
    keyboard = telebot.types.InlineKeyboardMarkup()
-   """bot.send_message(message.chat.id, "Lista de Carreras de Grado que pueden interesarte 🎓")"""
-
+   keyboard.add(
+        telebot.types.InlineKeyboardButton(
+        'Lista de Carreras de Grado que pueden interesarte 🎓', url='telegram.me/artiomtb'
+       )
+   )
    bot.send_message(
        message.chat.id,
        '1) Derecho 👉 /botones \n' +
