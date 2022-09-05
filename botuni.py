@@ -19,15 +19,13 @@ keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(
 
 @bot.message_handler(commands=['cuotas'])
 def send_cuotas(message):
-    try:
-        bot.reply_to(message,'Ing. Informatica')
-        bot.reply_to(message,'Ing. Comercial')
-        bot.reply_to(message,'Marketing')
-        bot.reply_to(message,'Psicologia')
-
-    except:
-        msg = bot.reply_to(message, """Error! Data Not Saved!. """)
-
+    """Muestra un mensaje con botones"""
+    markup1 = KeyboardButton(row_width = 2)
+    bo1 = KeyboardButton("Ing. Informatica", text="500.000")
+    bo2 = KeyboardButton("Ing. Comercial", text="400.000")
+    bo3 = KeyboardButton("Marketing", text="300.000")
+    markup1.add(bo1, bo2, bo3)
+    bot.send_message(message.chat.id, "🎓Haz click en un botón", reply_markup=markup1)
 
 
 @bot.message_handler(commands=['start'])
