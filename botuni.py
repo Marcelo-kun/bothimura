@@ -19,12 +19,6 @@ def send_welkome(message):
 
 @bot.message_handler(commands=['Carreras', 'carreras'])
 def carreras_command(message):
-   keyboard = telebot.types.InlineKeyboardMarkup()
-   keyboard.add(
-       telebot.types.InlineKeyboardButton(
-           'Lista de Carreras de Grado que pueden interesarte 🎓', url='telegram.me/artiomtb'
-       )
-   )
    bot.send_message(
        message.chat.id,
        '1) Derecho 👉 /botones \n' +
@@ -35,7 +29,6 @@ def carreras_command(message):
        '6) Licenciatura en Ciencias de la Educación',
        '7) Licenciatura en Enfermería',
        '8) Licenciatura en Psicología',
-       reply_markup=keyboard
    )
 
 
@@ -43,8 +36,8 @@ def carreras_command(message):
 def cmd_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""
     markup = InlineKeyboardMarkup(row_width = 5)
-    b1 = InlineKeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
-    b2 = InlineKeyboardButton("Aula Virtual", url="https://grado.unigran.edu.py/")
+    b1 = InlineKeyboardButton("UGA Radio", url="http://ugaradio.com.py/\n")
+    b2 = InlineKeyboardButton("Aula Virtual", url="https://grado.unigran.edu.py/\n")
     b3 = InlineKeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
     b4 = InlineKeyboardButton("UNIGRAN INSTAGRAM", url="https://instagram.com/unigranpy?igshid=YmMyMTA2M2Y=")
     markup.add(b1, b2, b3, b4)
