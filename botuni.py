@@ -31,11 +31,11 @@ keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).row(
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    bot.reply_to("Resultado 1", reply_markup=keyboard1)
+    message.reply("Resultado 1", reply_markup=keyboard1)
 
 @bot.message_handler(commands=['info'])
 def info(message):
-    bot.reply_to("Resultado 2 ", reply_markup=keyboard2)
+    message.reply("Resultado 2 ", reply_markup=keyboard2)
 
 
 """@bot.message_handler(commands=['start'])
