@@ -14,7 +14,7 @@ server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion, presiona el comando /Carreras para conocer los detalles que ofrece este Bot en cada una de las opciones que eligas y desees conocer")
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion, presiona el comando /carreras para conocer los detalles que ofrece este Bot en cada una de las opciones que eligas y desees conocer:")
 
 
 @bot.message_handler(commands=['carreras'])
@@ -22,12 +22,12 @@ def carreras_command(message):
    keyboard = telebot.types.InlineKeyboardMarkup()
    keyboard.add(
        telebot.types.InlineKeyboardButton(
-           "Lista de Carreras de Grado que pueden interesarte 🎓", url='https://www.unigran.edu.py/grado/'
+           "Pagina Web Oficial 🎓", url='https://www.unigran.edu.py/'
        )
    )
    bot.send_message(
        message.chat.id,
-       '1) Derecho 👉 /botones \n' +
+       '1) Derecho \n' +
        '2) Ingeniería Comercial \n' +
        '3) Ingeniería en Informática \n' +
        '4) Ingeniería en Marketing y Publicidad \n' +
@@ -42,7 +42,7 @@ def carreras_command(message):
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
     """Muestra un mensaje con botones inline (a continuacion del mensaje)"""
-    markup = InlineKeyboardMarkup(row_width = 5)
+    markup = InlineKeyboardMarkup(row_width = 2)
     b1 = InlineKeyboardButton("UGA Radio", url="http://ugaradio.com.py/")
     b2 = InlineKeyboardButton("Aula Virtual", url="https://grado.unigran.edu.py/")
     b3 = InlineKeyboardButton("UNIGRAN FACEBOOK", url="https://www.facebook.com/unigranparaguay?_rdc=1&_rdr")
