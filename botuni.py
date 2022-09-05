@@ -17,11 +17,11 @@ server = Flask(__name__)
 
 button1 = KeyboardButton('Hello')
 button2 = KeyboardButton('Youtube')
-keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1).add(button2)
+keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False).add(button1).add(button2)
 
-button3 = KeyboardButton("hola que tal estas")
+button3 = KeyboardButton('Hello' , request_contact=True)
 button4 = KeyboardButton('Youtube', request_contact=True)
-keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button3).add(button4)
+keyboard2=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False).add(button3).add(button4)
 
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
@@ -29,7 +29,7 @@ def send_welkome(message):
 
 @bot.message_handler(commands=['info'])
 def info(message):
-    bot.reply_to(message, "Informacion sobre ti:", reply_markup=keyboard1)
+    bot.reply_to(message, "Informacion sobre ti:", reply_markup=keyboard2)
 
 @bot.message_handler()
 def kb_answer(message):
@@ -39,19 +39,6 @@ def kb_answer(message):
         message.answer('mira mas tutoriales')
     else:
         message.answer(f' Your message is: {message.text}')
-
-@bot.message_handler(commands=['menu'])
-def menu(message):
-    keyboard = []
-    keyboard.append([KeyboardButton(f'Informacion sobre el bot', callback_data='1')])
-    keyboard.append([KeyboardButton(f'Mi WhatsApp', callback_data='2')])
-    keyboard.append([KeyboardButton(f'Lista', callback_data='3')])
-    keyboard.append([KeyboardButton(f'Bot para WA', callback_data='4')])
-    keyboard.append([KeyboardButton(f'Redes Sociales', callback_data='5')])
-    keyboard.append([KeyboardButton(f'Cafe?', callback_data='6')])
-    reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True, resize_keyboard=True)
-    update.message.reply_text('*****Menu*****\nElige una de las siguientes opciones:',  reply_markup=reply_markup)
-
 
 @bot.message_handler(commands=['botones'])
 def cmd_botones(message):
