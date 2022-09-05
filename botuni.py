@@ -14,14 +14,16 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-button1 = KeyboardButton('Hello')
+button1 = KeyboardButton('cuotas')
 keyboard1=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button1)
 
-@bot.message_handler(commands=['input'])
-def input(message):
-    texts = message.text.split('prueba')
+@bot.message_handler(commands=['cuotas'])
+def send_cuotas(message):
     try:
-        bot.reply_to(message,'Saved!')
+        bot.reply_to(message,'Ing. Informatica')
+        bot.reply_to(message,'Ing. Comercial')
+        bot.reply_to(message,'Marketing')
+        bot.reply_to(message,'Psicologia')
 
     except:
         msg = bot.reply_to(message, """Error! Data Not Saved!. """)
@@ -32,9 +34,6 @@ def input(message):
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion")
 
-@bot.message_handler(commands=['info'])
-def info(message):
-    bot.reply_to(message, "Informacion sobre ti:", reply_markup=input)
 
 
 @bot.message_handler(commands=['botones'])
