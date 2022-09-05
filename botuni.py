@@ -12,7 +12,7 @@ API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
-@bot.message_handler(commands=['start', 'Start'])
+@bot.message_handler(commands=['start'])
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion, presiona el comando /Carreras para conocer los detalles que ofrece este Bot en cada una de las opciones que eligas y desees conocer")
 
@@ -22,7 +22,7 @@ def carreras_command(message):
    keyboard = telebot.types.InlineKeyboardMarkup()
    keyboard.add(
        telebot.types.InlineKeyboardButton(
-           'Lista de Carreras de Grado que pueden interesarte 🎓', url='https://www.unigran.edu.py/grado/'
+           "Lista de Carreras de Grado que pueden interesarte 🎓", url='https://www.unigran.edu.py/grado/'
        )
    )
    bot.send_message(
@@ -30,10 +30,10 @@ def carreras_command(message):
        '1) Derecho 👉 /botones \n' +
        '2) Ingeniería Comercial \n' +
        '3) Ingeniería en Informática \n' +
-       '4) Ingeniería en Marketing y Publicidad\n' +
-       '5) Licenciatura en Ciencias Contables',
-       '6) Licenciatura en Ciencias de la Educación',
-       '7) Licenciatura en Enfermería',
+       '4) Ingeniería en Marketing y Publicidad \n' +
+       '5) Licenciatura en Ciencias Contables \n' +
+       '6) Licenciatura en Ciencias de la Educación \n' +
+       '7) Licenciatura en Enfermería \n' +
        '8) Licenciatura en Psicología',
        reply_markup=keyboard
    )
