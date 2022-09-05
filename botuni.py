@@ -22,12 +22,12 @@ bot = telebot.TeleBot(API_TOKEN)
 server = Flask(__name__)
 
 @bot.message_handler(commands=['start', 'help'])
-async def welcome(message):
-    await message.reply("Resultado 1", reply_markup=keyboard1)
+def send_welcome(message):
+    bot.reply_to("Resultado 1", reply_markup=keyboard1)
 
 @bot.message_handler(commands=['info'])
-async def info(message):
-    await message.reply("Resultado 2 ", reply_markup=keyboard2)
+def info(message):
+    bot.reply_to("Resultado 2 ", reply_markup=keyboard2)
 
 button1 = KeyboardButton('Hello')
 button2 = KeyboardButton('Youtube')
