@@ -3,10 +3,9 @@ from requests import post, request
 import telebot
 from flask import Flask, request, request_started
 import os
-from telebot.types import InlineKeyboardMarkup
-from telebot.types import InlineKeyboardButton
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardMarkup
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
-from logging import logger
+
 
         
 
@@ -41,11 +40,6 @@ def kb_answer(message):
         message.answer(f' Your message is: {message.text}')
 
 def Menu(update, context):
-    bot = context.bot
-    resize_keyboard=True
-    ChatId = update.message.chat_id
-    userName = update.effective_user["first_name"]
-    logger.info(f'El Usuario {userName} Id:{ChatId} ah accedido al menu')
     keyboard = []
     keyboard.append([KeyboardButton(f'Informacion sobre el bot', callback_data='1')])
     keyboard.append([KeyboardButton(f'Mi WhatsApp', callback_data='2')])
