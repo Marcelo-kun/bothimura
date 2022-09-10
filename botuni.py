@@ -3,6 +3,7 @@ import telebot
 from flask import Flask, request
 import os
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
+from telebot.types import ForceReply
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 
@@ -10,12 +11,55 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemo
 
 API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
+usuarios = {}
 server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad")
+    bot.send_message(message.chat.id, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio o /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad")
 
+@bot.message_handler(commands=['inicio'])
+def bot_inicio(message):
+    markup = ForceReply()
+    msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup)
+    bot.register_next_step_handler(msg, preguntar_edad)
+
+def preguntar_edad(message):
+    usuarios[message.chat.id] = {}
+    usuarios[message.chat.id]["nombre"] = message.text
+    markup = ForceReply()
+    msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup)
+    bot.register_next_step_handler(msg, preguntar_sexo)
+
+def preguntar_sexo(message):
+    if not message.text.isdigit():
+        markup = ForceReply()
+        msg = bot.send_message(message.chat.id, 'Error: indicar nro \n¿Cuantos años tienes?')
+        bot.register_next_step_handler(msg, preguntar_sexo)
+    else:
+        usuarios[message.chat.id]["edad"] = int(message.text)
+        markup = ReplyKeyboardMarkup(
+            one_time_keyboard=True,
+            input_field_placeholder="Pulsa un boton",
+            resize_keyboard=True
+            )
+        markup.add("hombre", "mujer")
+        msg = bot.send_message(message.chat.id, '¿Cual es tu sexo?', reply_markup=markup)
+        bot.register_next_step_handler(msg, guardar_datos_usuario)
+
+    def guardar_datos_usuario(message):
+        if message.text != "hombre" and message.text != "mujer":
+            msg = bot.send_message(message.chat.id, 'Error: sexo no valido. \n Pulsa un boton')
+            bot.register_next_step_handler(msg, guardar_datos_usuario)
+        else:
+            usuarios[message.chat.id]["sexo"] = message.text
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre:</code> {usuarios[message.chat,id]["nombre"]}\n'
+            texto+= f'<code>Edad..:</code> {usuarios[message.chat,id]["edad"]}\n'
+            texto+= f'<code>Sexo..:</code> {usuarios[message.chat,id]["sexo"]}\n'
+            bot.send_message(message.chat.id, texto, parse_mode="html")
+            print(usuarios)
+            del usuarios[message.chat.id]
 
 @bot.message_handler(commands=['carreras'])
 def carreras_command(message):
