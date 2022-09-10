@@ -18,7 +18,7 @@ server = Flask(__name__)
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio o /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad")
 
-@bot.message_handler(commands=['inicio'])
+"""@bot.message_handler(commands=['inicio'])
 def bot_inicio(message):
     markup = ForceReply()
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup)
@@ -80,7 +80,7 @@ def carreras_command(message):
        '7) Licenciatura en Enfermería \n' +
        '8) Licenciatura en Psicología',
        reply_markup=keyboard
-   )
+   )"""
 
 
 @bot.message_handler(commands=['botones'])
