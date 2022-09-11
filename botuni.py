@@ -58,7 +58,8 @@ def guardar_datos_usuario(message):
         texto+= f'<code>Nombre:</code> {usuarios[message.chat,id]["nombre"]}\n'
         texto+= f'<code>Edad..:</code> {usuarios[message.chat,id]["edad"]}\n'
         texto+= f'<code>Sexo..:</code> {usuarios[message.chat,id]["sexo"]}\n'
-        bot.send_message(message.chat.id, texto, parse_mode="html")
+        markup = ReplyKeyboardRemove()
+        bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios)
         del usuarios[message.chat.id]
 
