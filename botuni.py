@@ -3,22 +3,22 @@ import telebot
 from flask import Flask, request
 import os
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-"""from telebot.types import ForceReply
-from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove"""
+from telebot.types import ForceReply
+from telebot.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 
         
 
 API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
 bot = telebot.TeleBot(API_TOKEN)
-usuarios = {}
 server = Flask(__name__)
+usuarios = {}
 
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio o /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad")
 
-"""@bot.message_handler(commands=['inicio'])
+@bot.message_handler(commands=['inicio'])
 def bot_inicio(message):
     markup = ForceReply()
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup)
@@ -80,7 +80,7 @@ def carreras_command(message):
        '7) Licenciatura en Enfermería \n' +
        '8) Licenciatura en Psicología',
        reply_markup=keyboard
-   )"""
+   )
 
 
 @bot.message_handler(commands=['botones'])
