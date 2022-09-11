@@ -16,7 +16,8 @@ usuarios = {}
 
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio o /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad")
+    markup = ReplyKeyboardRemove()
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio o /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad", reply_markup=markup)
 
 @bot.message_handler(commands=['inicio'])
 def bot_inicio(message):
@@ -59,7 +60,7 @@ def preguntar_sexo(message):
             texto+= f'<code>Sexo..:</code> {usuarios[message.chat,id]["sexo"]}\n'
             bot.send_message(message.chat.id, texto, parse_mode="html")
             print(usuarios)
-            """del usuarios[message.chat.id]"""
+            del usuarios[message.chat.id]
 
 @bot.message_handler(commands=['carreras'])
 def carreras_command(message):
