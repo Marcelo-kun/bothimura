@@ -48,19 +48,19 @@ def preguntar_sexo(message):
         msg = bot.send_message(message.chat.id, '¿Cual es tu sexo?', reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
 
-    def guardar_datos_usuario(message):
-        if message.text != "hombre" and message.text != "mujer":
-            msg = bot.send_message(message.chat.id, 'Error: sexo no valido. \n Pulsa un boton')
-            bot.register_next_step_handler(msg, guardar_datos_usuario)
-        else:
-            usuarios[message.chat.id]["sexo"] = message.text
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre:</code> {usuarios[message.chat,id]["nombre"]}\n'
-            texto+= f'<code>Edad..:</code> {usuarios[message.chat,id]["edad"]}\n'
-            texto+= f'<code>Sexo..:</code> {usuarios[message.chat,id]["sexo"]}\n'
-            bot.send_message(message.chat.id, texto, parse_mode="html")
-            print(usuarios)
-            del usuarios[message.chat.id]
+def guardar_datos_usuario(message):
+    if message.text != "hombre" and message.text != "mujer":
+        msg = bot.send_message(message.chat.id, 'Error: sexo no valido. \n Pulsa un boton')
+        bot.register_next_step_handler(msg, guardar_datos_usuario)
+    else:
+        usuarios[message.chat.id]["sexo"] = message.text
+        texto = 'Datos introducidos:\n'
+        texto+= f'<code>Nombre:</code> {usuarios[message.chat,id]["nombre"]}\n'
+        texto+= f'<code>Edad..:</code> {usuarios[message.chat,id]["edad"]}\n'
+        texto+= f'<code>Sexo..:</code> {usuarios[message.chat,id]["sexo"]}\n'
+        bot.send_message(message.chat.id, texto, parse_mode="html")
+        print(usuarios)
+        del usuarios[message.chat.id]
 
 @bot.message_handler(commands=['carreras'])
 def carreras_command(message):
