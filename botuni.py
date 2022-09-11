@@ -28,7 +28,7 @@ def preguntar_edad(message):
     usuarios[message.chat.id] = {}
     usuarios[message.chat.id]["nombre"] = message.text
     markup = ForceReply()
-    msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup)
+    msg = bot.send_message(message.chat.id, "¿Cuantos años tienes?", reply_markup=markup)
     bot.register_next_step_handler(msg, preguntar_sexo)
 
 def preguntar_sexo(message):
@@ -59,7 +59,7 @@ def preguntar_sexo(message):
             texto+= f'<code>Sexo..:</code> {usuarios[message.chat,id]["sexo"]}\n'
             bot.send_message(message.chat.id, texto, parse_mode="html")
             print(usuarios)
-            del usuarios[message.chat.id]
+            """del usuarios[message.chat.id]"""
 
 @bot.message_handler(commands=['carreras'])
 def carreras_command(message):
