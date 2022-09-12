@@ -17,7 +17,7 @@ usuarios = {}
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
     markup = ReplyKeyboardRemove()
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio o /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad", reply_markup=markup)
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio para presentarte ó directamente /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad", reply_markup=markup)
 
 @bot.message_handler(commands=['inicio'])
 def bot_inicio(message):
@@ -55,9 +55,9 @@ def guardar_datos_usuario(message):
     else:
         usuarios[message.chat.id]["sexo"] = message.text
         texto = 'Datos introducidos:\n'
-        texto+= f'<code>Nombre:</code> {usuarios[message.chat,id]["nombre"]}\n'
-        texto+= f'<code>Edad..:</code> {usuarios[message.chat,id]["edad"]}\n'
-        texto+= f'<code>Sexo..:</code> {usuarios[message.chat,id]["sexo"]}\n'
+        texto+= f'<code>Nombre:</code> {usuarios[message.chat.id]["nombre"]}\n'
+        texto+= f'<code>Edad..:</code> {usuarios[message.chat.id]["edad"]}\n'
+        texto+= f'<code>Sexo..:</code> {usuarios[message.chat.id]["sexo"]}\n'
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios)
