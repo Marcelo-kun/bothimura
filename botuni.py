@@ -45,6 +45,7 @@ def preguntar_sexo(message):
             resize_keyboard=True
             )
         markup.add("hombre", "mujer")
+        markup = ReplyKeyboardRemove()
         msg = bot.send_message(message.chat.id, '¿Cual es tu sexo?', reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
 
