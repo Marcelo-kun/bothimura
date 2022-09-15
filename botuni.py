@@ -38,8 +38,7 @@ def preguntar_edad(message):
 def preguntar_sexo(message):
     if not message.text.isdigit():
         markup = ForceReply()
-        botones = ReplyKeyboardRemove()
-        msg = bot.send_message(message.chat.id, "Error: indicar nro \n¿Cuantos años tienes?", reply_markup=botones)
+        msg = bot.send_message(message.chat.id, "Error: indicar nro \n¿Cuantos años tienes?")
         bot.register_next_step_handler(msg, preguntar_sexo)
     else:
         usuarios[message.chat.id]["edad"] = int(message.text)
