@@ -15,7 +15,7 @@ server = Flask(__name__)
 usuarios = {}
 
 
-@bot.message_handler(commands=['text'])
+@bot.message_handler(content_types=['text'])
 def bot_mensajes_texto(message):
     if message.text.startswith("/"):
         bot.send.message(message.chat.id, "Comando no disponible")
