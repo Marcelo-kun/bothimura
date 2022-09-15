@@ -53,8 +53,7 @@ def preguntar_sexo(message):
 
 def guardar_datos_usuario(message):
     if message.text != "hombre" and message.text != "mujer":
-        botones = ReplyKeyboardRemove()
-        msg = bot.send_message(message.chat.id, "Error: sexo no valido. \n Pulsa un boton", reply_markup=botones)
+        msg = bot.send_message(message.chat.id, "Error: sexo no valido. \n Pulsa un boton")
         bot.register_next_step_handler(msg, guardar_datos_usuario)
     else:
         usuarios[message.chat.id]["sexo"] = message.text
