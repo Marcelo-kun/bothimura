@@ -103,10 +103,8 @@ def cmd_botones(message):
 
 @bot.message_handler(content_types=['text'])
 def bot_mensajes_texto(message):
-    if message.text.startswith("/"):
-        bot.send.message(message.chat.id, "Comando no disponible")
-    else:
-        bot.send.message(message.chat.id, "Utiliza los sigtes comandos: /start, /inicio, /botones, /carreras")
+    message.text and message.text.startswith("/")
+    bot.send.message(message.chat.id, "Comando no disponible")
 
 
 
