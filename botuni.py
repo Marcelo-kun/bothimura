@@ -52,7 +52,7 @@ def preguntar_sexo(message):
         bot.register_next_step_handler(msg, guardar_datos_usuario)
 
 def guardar_datos_usuario(message):
-    if message.text != "hombre" and message.text != "mujer":
+    if message.text != "Hombre" and message.text != "Mujer":
         msg = bot.send_message(message.chat.id, "Error: sexo no valido.\n Pulsa un boton")
         bot.register_next_step_handler(msg, guardar_datos_usuario)
     else:
