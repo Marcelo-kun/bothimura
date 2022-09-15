@@ -22,7 +22,7 @@ def bot_mensajes_texto(message):
     else:
         bot.send.message(message.chat.id, "Utiliza los sigtes comandos: /start, /inicio, /botones, /carreras")
 
-        
+
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
     markup = ReplyKeyboardRemove()
@@ -61,7 +61,8 @@ def preguntar_sexo(message):
 
 def guardar_datos_usuario(message):
     if message.text != "hombre" and message.text != "mujer":
-        msg = bot.send_message(message.chat.id, 'Error: sexo no valido. \n Pulsa un boton')
+        botones = ReplyKeyboardRemove()
+        msg = bot.send_message(message.chat.id, 'Error: sexo no valido. \n Pulsa un boton', reply_markup=botones)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
     else:
         usuarios[message.chat.id]["sexo"] = message.text
