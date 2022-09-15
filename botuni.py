@@ -21,9 +21,9 @@ def send_welkome(message):
 
 def bot_mensajes_texto(message):
     if message.text.startswith("/"):
-        bot.send.message(message.chat.id, "Comando no disponible")
+        bot.reply_to(message, "Comando no disponible")
     else:
-        bot.send.message(message.chat.id, "Utiliza los sigtes comandos: /start, /inicio, /botones, /carreras")
+        bot.reply_to(message, "Utiliza los sigtes comandos: /start, /inicio, /botones, /carreras")
 
 
 
