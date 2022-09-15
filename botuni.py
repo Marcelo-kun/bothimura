@@ -101,12 +101,6 @@ def cmd_botones(message):
     markup.add(b1, b2, b3, b4)
     bot.send_message(message.chat.id, "Enlaces que pueden intereasarte 🎓Haz click en el botón", reply_markup=markup)
 
-@bot.message_handler(content_types=['text'])
-def bot_mensajes_texto(message):
-    message.text and message.text.startswith("/")
-    bot.send.message(message.chat.id, "Comando no disponible")
-
-
 
 @server.route('/' + API_TOKEN, methods=['POST'])
 def getMessage():
@@ -120,4 +114,10 @@ def webhook():
     return "!", 200
 
 if __name__ + '__main__':
+    bot.set_my_commands([
+        telebot.types.BotCommand("/start", "Da inicio al bot"),
+        telebot.types.BotCommand("/inicio", "Breve presentacion del Usuario al bot"),
+        telebot.types.BotCommand("/carreras", "Lista de carreras que ofrece la Universidad"),
+        telebot.types.BotCommand("/botones", "Enlaces de interes"),
+    ])
     server.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
