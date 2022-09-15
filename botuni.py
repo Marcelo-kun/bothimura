@@ -19,6 +19,15 @@ def send_welkome(message):
     markup = ReplyKeyboardRemove()
     bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio para presentarte ó directamente /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad", reply_markup=markup)
 
+@bot.message_handler(commands=['text'])
+def bot_mensajes_texto(message):
+    if message.text.startswith("/"):
+        bot.send.message(message.chat.id, "Comando no disponible")
+    else:
+        bot.send.message(message.chat.id, "Utiliza los sigtes comandos: /start, /inicio, /botones, /carreras")
+
+
+
 @bot.message_handler(commands=['inicio'])
 def bot_inicio(message):
     markup = ForceReply()
