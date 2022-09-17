@@ -36,7 +36,7 @@ def preguntar_edad(message):
     bot.register_next_step_handler(msg, preguntar_sexo)
 
 def preguntar_sexo(message):
-    if not message.text.isdigit():
+    if  message.text.isdigit():
         markup = ForceReply()
         msg = bot.send_message(message.chat.id, "Error: indicar nro \n¿Cuantos años tienes?")
         bot.register_next_step_handler(msg, preguntar_sexo)
@@ -58,7 +58,7 @@ def guardar_datos_usuario(message):
         usuarios[message.chat.id]["sexo"] = message.text
         texto = 'Datos introducidos:\n'
         texto+= f'<code>Nombre:</code> {usuarios[message.chat.id]["nombre"]}\n'
-        texto+= f'<code>Edad..:</code> {usuarios[message.chat.id]["edad"]}\n'
+        texto+= f'<code>Carrera..:</code> {usuarios[message.chat.id]["edad"]}\n'
         texto+= f'<code>Sexo..:</code> {usuarios[message.chat.id]["sexo"]}\n'
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
