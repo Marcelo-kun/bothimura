@@ -28,38 +28,38 @@ def bot_inicio(message):
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup)
     bot.register_next_step_handler(msg, preguntar_edad)
 
-def preguntar_edad(message):
+def preguntar_curso(message):
     usuarios[message.chat.id] = {}
     usuarios[message.chat.id]["nombre"] = message.text
     markup = ForceReply()
-    msg = bot.send_message(message.chat.id, "¿Cuantos años tienes?", reply_markup=markup)
-    bot.register_next_step_handler(msg, preguntar_sexo)
+    msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
+    bot.register_next_step_handler(msg, preguntar_carrera)
 
-def preguntar_sexo(message):
+def preguntar_carrera(message):
     if  message.text.isdigit():
         markup = ForceReply()
-        msg = bot.send_message(message.chat.id, "Error: indicar nro \n¿Cuantos años tienes?")
-        bot.register_next_step_handler(msg, preguntar_sexo)
+        msg = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?")
+        bot.register_next_step_handler(msg, preguntar_carrera)
     else:
-        usuarios[message.chat.id]["edad"] = message.text
+        usuarios[message.chat.id]["curso"] = message.text
         markup = ReplyKeyboardMarkup( 
             input_field_placeholder="Pulsa un boton", 
             resize_keyboard=True
             )
-        markup.add("Hombre", "Mujer")
+        markup.add("Ing. Informatica", "Ing. Comercial")
         msg = bot.send_message(message.chat.id, "¿Cual es tu sexo?", reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
 
 def guardar_datos_usuario(message):
-    if message.text != "Hombre" and message.text != "Mujer":
+    if message.text != "Ing. Informatica" and message.text != "Ing. Comercial":
         msg = bot.send_message(message.chat.id, "Error: sexo no valido.\n Pulsa un boton")
         bot.register_next_step_handler(msg, guardar_datos_usuario)
     else:
-        usuarios[message.chat.id]["sexo"] = message.text
+        usuarios[message.chat.id]["carrera"] = message.text
         texto = 'Datos introducidos:\n'
-        texto+= f'<code>Nombre:</code> {usuarios[message.chat.id]["nombre"]}\n'
-        texto+= f'<code>Carrera..:</code> {usuarios[message.chat.id]["edad"]}\n'
-        texto+= f'<code>Sexo..:</code> {usuarios[message.chat.id]["sexo"]}\n'
+        texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+        texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["edad"]}\n'
+        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["sexo"]}\n'
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios)
