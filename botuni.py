@@ -18,7 +18,7 @@ usuarios = {}
 @bot.message_handler(commands=['start'])
 def send_welkome(message):
     markup = ReplyKeyboardRemove()
-    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Presiona el comando /inicio para presentarte ó directamente /carreras para conocer los detalles de cada una de las carreras de grado habilitadas por la Cones y acreditadas por Aneaes. Tambien el comando /botones si deseas conocer un poco más acerca de la Universidad", reply_markup=markup)
+    bot.reply_to(message, "Hola, soy un 🤖ChatBot informativo de la Universidad Gran Asuncion. Para conocer un poco más de lo que puedes hacer con este bot te invitamos a darle click al Menu de comandos ubicado en la parte inferior izquierdo de tu pantalla, allí se desplegaran una lista de comandos con una breve descripcion de las acciones que relizan cada una de ellas.", reply_markup=markup)
 
 
 
