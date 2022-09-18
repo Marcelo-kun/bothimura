@@ -47,12 +47,12 @@ def preguntar_carrera(message):
             resize_keyboard=True
             )
         markup.add("Ing. Informatica", "Ing. Comercial")
-        msg = bot.send_message(message.chat.id, "¿Cual es tu sexo?", reply_markup=markup)
+        msg = bot.send_message(message.chat.id, "¿Que Carrera?", reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
 
 def guardar_datos_usuario(message):
     if message.text != "Ing. Informatica" and message.text != "Ing. Comercial":
-        msg = bot.send_message(message.chat.id, "Error: sexo no valido.\n Pulsa un boton")
+        msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
         bot.register_next_step_handler(msg, guardar_datos_usuario)
     else:
         usuarios[message.chat.id]["carrera"] = message.text
