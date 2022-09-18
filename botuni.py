@@ -26,7 +26,7 @@ def send_welkome(message):
 def bot_inicio(message):
     markup = ForceReply()
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup)
-    bot.register_next_step_handler(msg, preguntar_edad)
+    bot.register_next_step_handler(msg, preguntar_curso)
 
 def preguntar_curso(message):
     usuarios[message.chat.id] = {}
@@ -58,8 +58,8 @@ def guardar_datos_usuario(message):
         usuarios[message.chat.id]["carrera"] = message.text
         texto = 'Datos introducidos:\n'
         texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-        texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["edad"]}\n'
-        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["sexo"]}\n'
+        texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios)
