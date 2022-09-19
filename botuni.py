@@ -50,8 +50,8 @@ def preguntar_carrera(message):
         msg = bot.send_message(message.chat.id, "¿Carrera?", reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
 def carrera_cuota(message):
-    usuarios[message.chat.id]["carrera"] == "Ing. Informatica"
-    msg = bot.send_message(message.chat.id, "12 cuotas de 500.000")
+    usuarios[message.chat.id]["cuota"] == "Ing. Informatica"
+    msg = bot.send_message(message.chat.id, "12 cutas de 500.000")
     bot.register_next_step_handler(msg, preguntar_carrera)
 
 def guardar_datos_usuario(message):
@@ -64,6 +64,7 @@ def guardar_datos_usuario(message):
         texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
         texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
         texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["cuota"]}\n'
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios)
