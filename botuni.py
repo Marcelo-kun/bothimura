@@ -42,10 +42,9 @@ def preguntar_carrera(message):
         bot.register_next_step_handler(msg, preguntar_carrera)
     else:
         usuarios[message.chat.id]["curso"] = message.text
-        markup = ReplyKeyboardMarkup( 
-            input_field_placeholder="Pulsa un boton",
-            row_width=2 
-            resize_keyboard=True
+        markup = ReplyKeyboardMarkup(
+            input_field_placeholder="Pulsa un boton", 
+            row_width=3
             )
         markup.add("Ing. Informatica", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
         msg = bot.send_message(message.chat.id, "¿Que Carrera?", reply_markup=markup)
