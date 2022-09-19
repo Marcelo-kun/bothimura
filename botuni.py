@@ -33,7 +33,8 @@ def preguntar_curso(message):
     usuarios[message.chat.id] = {}
     usuarios[message.chat.id]["nombre"] = message.text
     markup = ReplyKeyboardMarkup(
-            input_field_placeholder="Pulsa un boton", 
+            input_field_placeholder="Pulsa un boton",
+            one_time_keyboard=True, 
             resize_keyboard=True
             )
     markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
