@@ -43,7 +43,7 @@ def preguntar_curso(message):
 def preguntar_carrera(message):
     if  message.text.isdigit():
         markup = ForceReply()
-        msg = bot.send_message(message.chat.id, "Error: No indicar solo en nros \n¿Curso?")
+        msg = bot.send_message(message.chat.id, "Error: No indicar solo en nros \n¿Curso?", reply_markup=markup)
         bot.register_next_step_handler(msg, preguntar_carrera)
     else:
         usuarios[message.chat.id]["curso"] = message.text
