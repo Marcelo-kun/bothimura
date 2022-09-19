@@ -34,8 +34,7 @@ def preguntar_curso(message):
     usuarios[message.chat.id]["nombre"] = message.text
     markup = ReplyKeyboardMarkup(
             input_field_placeholder="Pulsa un boton",
-            one_time_keyboard=True, 
-            resize_keyboard=True
+            row_width=5
             )
     markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
     msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
@@ -49,8 +48,7 @@ def preguntar_carrera(message):
     else:
         usuarios[message.chat.id]["curso"] = message.text
         markup = ReplyKeyboardMarkup(
-            input_field_placeholder="Pulsa un boton",
-            one_time_keyboard=True, 
+            input_field_placeholder="Pulsa un boton", 
             row_width=3
             )
         markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
