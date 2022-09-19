@@ -49,6 +49,7 @@ def preguntar_carrera(message):
     else:
         usuarios[message.chat.id]["curso"] = message.text
         markup = ReplyKeyboardMarkup(
+            one_time_keyboard=True,
             input_field_placeholder="Pulsa un boton", 
             row_width=3
             )
