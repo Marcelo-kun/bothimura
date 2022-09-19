@@ -50,24 +50,20 @@ def preguntar_carrera(message):
         markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
         msg = bot.send_message(message.chat.id, "¿Carrera?", reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
-def pregunta_cuota(message):
-    usuarios[message.chat.id]["cuota"] = message.text
-    carrera = "Ing. Informática"
-    print(f'La cuota de {carrera} es de 500.000gs')
-
-
 
 def guardar_datos_usuario(message):
     if message.text != "Ing. Informática" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
+        bot.register_next_step_handler(msg, guardar_datos_usuario)
+    elif message.text == "Ing. Informática" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+        msg = bot.send_message(message.chat.id,[ "12 cuotas de 500.000gs"])
         bot.register_next_step_handler(msg, guardar_datos_usuario)
     else:
         usuarios[message.chat.id]["carrera"] = message.text
         texto = 'Datos introducidos:\n'
         texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
         texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-        texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["curso"]}\n'
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios)
