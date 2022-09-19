@@ -52,7 +52,7 @@ def preguntar_carrera(message):
 def carrera_cuota(message):
     usuarios[message.chat.id]["cuota"] == "Ing. Informatica"
     msg = bot.send_message(message.chat.id, "12 cutas de 500.000")
-    bot.register_next_step_handler(msg, preguntar_carrera)
+    bot.register_next_step_handler(msg, guardar_datos_usuario)
 
 def guardar_datos_usuario(message):
     if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
