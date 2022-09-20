@@ -1,4 +1,3 @@
-from numbers import Integral
 from requests import request
 import telebot
 from flask import Flask, request
@@ -30,15 +29,15 @@ def bot_inicio(message):
     bot.register_next_step_handler(msg, preguntar_curso)
 
 def preguntar_curso(message):
-    usuarios[message.chat.id] = {}
-    usuarios[message.chat.id]["nombre"] = message.text
-    markup = ReplyKeyboardMarkup(
-        input_field_placeholder="Pulsa un boton",
-        row_width=5
+        usuarios[message.chat.id] = {}
+        usuarios[message.chat.id]["nombre"] = message.text
+        markup = ReplyKeyboardMarkup(
+            input_field_placeholder="Pulsa un boton",
+            row_width=5
             )
-    markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
-    msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
-    bot.register_next_step_handler(msg, preguntar_carrera)
+        markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
+        msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
+        bot.register_next_step_handler(msg, preguntar_carrera)
 
 def preguntar_carrera(message):
     if  message.text.isdigit():
@@ -63,8 +62,8 @@ def guardar_datos_usuario(message):
         usuarios[message.chat.id]["carrera"] = message.text
         texto = 'Datos introducidos:\n'
         texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-        texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso", "1er Curso"]}\n'
-        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera", "Ing. Informática"]}\n'
+        texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios)
