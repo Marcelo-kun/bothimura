@@ -32,11 +32,6 @@ def preguntar_curso(message):
     usuarios[message.chat.id] = {}
     usuarios[message.chat.id]["nombre"] = message.text
     markup = ForceReply()
-    """markup = ReplyKeyboardMarkup(
-        input_field_placeholder="Pulsa un boton",
-        row_width=5
-        )
-    markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")"""
     msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
     bot.register_next_step_handler(msg, preguntar_carrera)
 
@@ -47,12 +42,12 @@ def preguntar_carrera(message):
         bot.register_next_step_handler(msg, preguntar_carrera)
     else:
         usuarios[message.chat.id]["curso"] = message.text
-        botones = ReplyKeyboardMarkup(
+        markup = ReplyKeyboardMarkup(
             input_field_placeholder="Pulsa un boton", 
             row_width=3
             )
-        botones.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
-        msg = bot.send_message(message.chat.id, "¿Carrera?", reply_markup=botones)
+        markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
+        msg = bot.send_message(message.chat.id, "¿Carrera?", reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
 
 def guardar_datos_usuario(message):
