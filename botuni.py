@@ -37,7 +37,6 @@ def preguntar_curso(message):
         row_width=5
         )
     markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
-    """markup = ForceReply()"""
     msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
     bot.register_next_step_handler(msg, preguntar_carrera)
 
