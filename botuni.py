@@ -31,25 +31,27 @@ def bot_inicio(message):
 def preguntar_curso(message):
     usuarios[message.chat.id] = {}
     usuarios[message.chat.id]["nombre"] = message.text
-    msg = bot.send_message(message.chat.id, "¿Curso?")
+    markup = ForceReply()
+    msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
     bot.register_next_step_handler(msg, preguntar_carrera)
 
 def preguntar_carrera(message):
     if  message.text.isdigit():
         markup = ForceReply()
-        msg = bot.send_message(message.chat.id, "Error: No indicar solo en nros \n¿Curso?", reply_markup=markup)
+        msg = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?")
         bot.register_next_step_handler(msg, preguntar_carrera)
     else:
         usuarios[message.chat.id]["curso"] = message.text
-        markup = ReplyKeyboardMarkup(
-            input_field_placeholder="Pulsa un boton"
+        markup = ReplyKeyboardMarkup( 
+            input_field_placeholder="Pulsa un boton", 
+            resize_keyboard=True
             )
-        markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
-        msg = bot.send_message(message.chat.id, "¿Carrera?", reply_markup=markup)
+        markup.add("Ing. Informatica", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
+        msg = bot.send_message(message.chat.id, "¿Que Carrera?", reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario)
 
 def guardar_datos_usuario(message):
-    if message.text != "Ing. Informática" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+    if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
         bot.register_next_step_handler(msg, guardar_datos_usuario)
     else:
