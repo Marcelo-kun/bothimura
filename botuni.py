@@ -1,4 +1,3 @@
-from random import randint
 from requests import request
 import telebot
 from flask import Flask, request
@@ -31,9 +30,6 @@ def bot_inicio(message):
 
 def preguntar_curso(message):
     usuarios[message.chat.id] = {}
-    curs = randint("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
-    ms = message.chat.id
-    usuarios[ms]=curs
     usuarios[message.chat.id]["nombre"] = message.text
     markup = ReplyKeyboardMarkup(
         input_field_placeholder="Pulsa un boton",
@@ -43,7 +39,6 @@ def preguntar_curso(message):
     markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
     msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
     bot.register_next_step_handler(msg, preguntar_carrera)
-
 
 def preguntar_carrera(message):
     if  message.text.isdigit():
@@ -59,31 +54,7 @@ def preguntar_carrera(message):
             )
         markup.add("Ing. Informatica", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
         msg = bot.send_message(message.chat.id, "¿Que Carrera?", reply_markup=markup)
-        bot.register_next_step_handler(msg, preguntar_carrera)
-
-
-def comprobar_curso(message):
-    ms = message.chat.id
-    if  message.text.isdigit():
-        markup = ForceReply()
-        ms = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?", reply_markup=markup)
-        bot.register_next_step_handler(ms, guardar_datos_usuario)
-    else:
-        n = (message.text)
-        if n != "1er Curso" and message.text != "2do Curso" and message.text != "3er Curso" and message.text != "4to Curso" and message.text != "5to Curso":
-            ms = bot.send_message(message.chat.id, "ERROR: Seleccione Curso")
-            bot.register_next_step_handler(ms, guardar_datos_usuario)
-        else:
-            if n == usuarios["1er Curso"]:
-                ms = bot.reply_tomarkup(message, "12 cuotas de 220.000")
-                bot.register_next_step_handler(ms, guardar_datos_usuario)
-            elif n == usuarios["2do Curso"]:
-                ms = bot.reply_to(message, "12 cuotas de 240.000")
-                bot.register_next_step_handler(ms, guardar_datos_usuario)
-            else:
-                n == usuarios["3er Curso"]
-                ms = bot.reply_to(message, "12 cuotas de 240.000")
-                bot.register_next_step_handler(ms, guardar_datos_usuario)
+        bot.register_next_step_handler(msg, guardar_datos_usuario)
 
 
 def guardar_datos_usuario(message):
@@ -96,7 +67,6 @@ def guardar_datos_usuario(message):
         texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
         texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
         texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-        texto+= f'<code>Datos..:</code> {usuarios[message.chat.id]["curs"]}\n'
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios)
