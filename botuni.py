@@ -62,12 +62,14 @@ def guardar_datos_usuario(message):
     if usuarios[message.chat.id]["carrera"] == "Ing. Informática":
         
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
             texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<code>Nombre...........:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso............:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera..........:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota............:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<code>Derecho de Examen:</code> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
