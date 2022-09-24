@@ -56,11 +56,11 @@ def guardar_datos_usuario(message):
         bot.register_next_step_handler(msg, guardar_datos_usuario)
     elif usuarios[message.chat.id]["carrera"] == "Ing. Informática":
     
-         if usuarios[message.chat.id]["curso"]==["1"]:
+         if usuarios[message.chat.id]["curso"]==message.text:
             usuarios[message.chat.id]["cuota"] == "500.000Gs"
             bot.register_next_step_handler(msg, guardar_datos_usuario)
 
-            usuarios[message.chat.id]["carrera"] = message.text
+            usuarios[message.chat.id]["curso"] = message.text
             #se crea una variable tipo string donde se guarda una cadena de texto en la que se indica los datos introducidos formateando la salida
             texto = 'Datos introducidos:\n'
             texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
