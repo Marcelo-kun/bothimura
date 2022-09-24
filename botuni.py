@@ -59,7 +59,7 @@ def guardar_datos_usuario(message):
     usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
-    if usuarios[message.chat.id]["carrera"] == "Ing. Informática": #and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+    if usuarios[message.chat.id]["carrera"] == "Ing. Informática":
         
         if usuarios[message.chat.id]["curso"] == "1er Curso":
             usuarios[message.chat.id]["cuota"] = "500.000Gs"
@@ -126,7 +126,7 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
-###########################################################################################################################################
+#####################################################Ing. Comercial######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Ing. Comercial":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
             usuarios[message.chat.id]["cuota"] = "500.000Gs"
@@ -193,6 +193,408 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
+#####################################################Ing. en Marketing y Publicidad##########################################################################
+    elif usuarios[message.chat.id]["carrera"] == "Ing. en Marketing y Publicidad":
+        if usuarios[message.chat.id]["curso"] == "1er Curso":
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+            
+        elif usuarios[message.chat.id]["curso"] == "2do Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+        
+        elif usuarios[message.chat.id]["curso"] == "3er Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "4to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "5to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+        else: 
+            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+            #se vuelve a ejecutar la funcion
+            bot.register_next_step_handler(msg, preguntar_curso)
+            #se informa del error y se vuelve a preguntar
+#####################################################Lic. en Ciencias Contables######################################################################################
+    elif usuarios[message.chat.id]["carrera"] == "Lic. en Ciencias Contables":
+        if usuarios[message.chat.id]["curso"] == "1er Curso":
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+            
+        elif usuarios[message.chat.id]["curso"] == "2do Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+        
+        elif usuarios[message.chat.id]["curso"] == "3er Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "4to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "5to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        else: 
+            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+            #se vuelve a ejecutar la funcion
+            bot.register_next_step_handler(msg, preguntar_curso)
+            #se informa del error y se vuelve a preguntar
+#####################################################Lic. en Ciencias de la Educación######################################################################################
+    elif usuarios[message.chat.id]["carrera"] == "Lic. en Ciencias de la Educación":
+        if usuarios[message.chat.id]["curso"] == "1er Curso":
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+            
+        elif usuarios[message.chat.id]["curso"] == "2do Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+        
+        elif usuarios[message.chat.id]["curso"] == "3er Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "4to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "5to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        else: 
+            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+            #se vuelve a ejecutar la funcion
+            bot.register_next_step_handler(msg, preguntar_curso)
+            #se informa del error y se vuelve a preguntar
+#####################################################Lic. en Enfermería######################################################################################
+    elif usuarios[message.chat.id]["carrera"] == "Lic. en Enfermería":
+        if usuarios[message.chat.id]["curso"] == "1er Curso":
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+            
+        elif usuarios[message.chat.id]["curso"] == "2do Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+        
+        elif usuarios[message.chat.id]["curso"] == "3er Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "4to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "5to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        else: 
+            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+            #se vuelve a ejecutar la funcion
+            bot.register_next_step_handler(msg, preguntar_curso)
+            #se informa del error y se vuelve a preguntar
+#####################################################Lic. en Psicología######################################################################################
+    elif usuarios[message.chat.id]["carrera"] == "Lic. en Psicología":
+        if usuarios[message.chat.id]["curso"] == "1er Curso":
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+            
+        elif usuarios[message.chat.id]["curso"] == "2do Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+        
+        elif usuarios[message.chat.id]["curso"] == "3er Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "4to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "5to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        else: 
+            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+            #se vuelve a ejecutar la funcion
+            bot.register_next_step_handler(msg, preguntar_curso)
+            #se informa del error y se vuelve a preguntar
+#####################################################Derecho######################################################################################
+    elif usuarios[message.chat.id]["carrera"] == "Derecho":
+        if usuarios[message.chat.id]["curso"] == "1er Curso":
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+            
+        elif usuarios[message.chat.id]["curso"] == "2do Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+        
+        elif usuarios[message.chat.id]["curso"] == "3er Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "4to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        elif usuarios[message.chat.id]["curso"] == "5to Curso":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+
+        else: 
+            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+            #se vuelve a ejecutar la funcion
+            bot.register_next_step_handler(msg, preguntar_curso)
+            #se informa del error y se vuelve a preguntar
+
     else: 
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
     #se vuelve a ejecutar la funcion
