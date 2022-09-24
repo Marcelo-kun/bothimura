@@ -53,6 +53,8 @@ def guardar_datos_usuario(message):
         
         if usuarios[message.chat.id]["curso"] == "1":
             usuarios[message.chat.id]["cuota"] == "500.000Gs"
+        else: 
+            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
     else: 
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
     #se vuelve a ejecutar la funcion
