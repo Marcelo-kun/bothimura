@@ -64,6 +64,19 @@ def guardar_datos_usuario(message):
             print(usuarios) #para que se vea en terminal
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             ######################
+        elif usuarios[message.chat.id]["curso"] == "2":
+            usuarios[message.chat.id]["cuota"] = "600.000Gs"
+            ######################
+            texto = 'Datos introducidos:\n'
+            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            markup = ReplyKeyboardRemove()
+            bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+            print(usuarios) #para que se vea en terminal
+            del usuarios[message.chat.id] #se elimina los datos del diccinario
+            ######################
 
         else: 
             msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
