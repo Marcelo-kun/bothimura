@@ -38,9 +38,8 @@ def preguntar_curso(message):
     msg = bot.send_message(message.chat.id, "¿Cual es  tu curso?", reply_markup=markup) #pregunta el curso
     bot.register_next_step_handler(msg, preguntar_carrera) #se registra respuesta en una funcion
 
-def preguntar_carrera(message):
-    usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
-    usuarios[message.chat.id]["curso"] = message.text #se guarda nombre dentro del diccionario vacio
+def preguntar_carrera(message): 
+    usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
     markup = ForceReply()
     msg = bot.send_message(message.chat.id, "¿Carrera?", reply_markup=markup) #pregunta el curso
     bot.register_next_step_handler(msg, guardar_datos_usuario) #se registra respuesta en una funcion
@@ -48,7 +47,7 @@ def preguntar_carrera(message):
 def guardar_datos_usuario(message):
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
-    if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+    if message.text != "Ing. Informática" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
         #se informa del error y se vuelve a preguntar
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
         #se vuelve a ejecutar la funcion
@@ -98,7 +97,7 @@ def preguntar_carrera(message):#esta funcion contiene la respuesta anterior
         bot.register_next_step_handler(msg, guardar_datos_usuario) #se guaradaran los datos en una funcion con este nombre"""
 
 
-def guardar_datos_usuario(message):
+"""def guardar_datos_usuario(message):
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
     if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
@@ -116,7 +115,7 @@ def guardar_datos_usuario(message):
         markup = ReplyKeyboardRemove()
         bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
         print(usuarios) #para que se vea en terminal
-        del usuarios[message.chat.id] #se elimina los datos del diccinario
+        del usuarios[message.chat.id] #se elimina los datos del diccinario"""
 
 @bot.message_handler(commands=['carreras'])
 def carreras_command(message):
