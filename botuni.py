@@ -52,7 +52,7 @@ def guardar_datos_usuario(message):
     if usuarios[message.chat.id]["carrera"] == "Ing. Informática": #and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
         
         if usuarios[message.chat.id]["curso"] == "1":
-            usuarios[message.chat.id]["cuota"] == "500.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
             ######################
             texto = 'Datos introducidos:\n'
             texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
