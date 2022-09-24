@@ -53,10 +53,10 @@ def guardar_datos_usuario(message):
         
         if usuarios[message.chat.id]["curso"] == message.text:
             usuarios[message.chat.id]["cuota"] == "500.000Gs"
-        else: 
-            msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
-        #se vuelve a ejecutar la funcion
-            bot.register_next_step_handler(msg, bot_inicio)
+    else: 
+        msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
+    #se vuelve a ejecutar la funcion
+        bot.register_next_step_handler(msg, bot_inicio)
         #se informa del error y se vuelve a preguntar
         
     #elif usuarios[message.chat.id]["carrera"] == "Ing. Informática":
