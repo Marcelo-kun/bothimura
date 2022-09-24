@@ -30,8 +30,41 @@ def bot_inicio(message):
     markup = ForceReply()
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup) #pregunta el nombre del usuario
     bot.register_next_step_handler(msg, preguntar_curso) #se registra respuesta en una funcion
+###codigo de prueba#############
+def preguntar_curso(message):
+    usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
+    usuarios[message.chat.id]["nombre"] = message.text #se guarda nombre dentro del diccionario vacio
+    markup = ForceReply()
+    msg = bot.send_message(message.chat.id, "¿Cual es  tu curso?", reply_markup=markup) #pregunta el curso
+    bot.register_next_step_handler(msg, preguntar_carrera) #se registra respuesta en una funcion
 
-def preguntar_curso(message): 
+def preguntar_carrera(message):
+    usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
+    usuarios[message.chat.id]["curso"] = message.text #se guarda nombre dentro del diccionario vacio
+    markup = ForceReply()
+    msg = bot.send_message(message.chat.id, "¿Carrera?", reply_markup=markup) #pregunta el curso
+    bot.register_next_step_handler(msg, guardar_datos_usuario) #se registra respuesta en una funcion
+
+def guardar_datos_usuario(message):
+    #guardamos los datos introducidos por el usuario
+    #si la carrera introducida no es valido
+    if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+        #se informa del error y se vuelve a preguntar
+        msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
+        #se vuelve a ejecutar la funcion
+        bot.register_next_step_handler(msg, guardar_datos_usuario)
+    else: #si la cerrrera introducida es valida
+        usuarios[message.chat.id]["carrera"] = message.text
+        #se crea una variable tipo string donde se guarda una cadena de texto en la que se indica los datos introducidos formateando la salida
+        texto = 'Datos introducidos:\n'
+        texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
+        texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
+        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
+        markup = ReplyKeyboardRemove()
+        bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
+        print(usuarios) #para que se vea en terminal
+        del usuarios[message.chat.id] #se elimina los datos del diccinario
+"""def preguntar_curso(message): 
     usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
     usuarios[message.chat.id]["nombre"] = message.text #se guarda nombre dentro del diccionario vacio
     markup = ReplyKeyboardMarkup(
@@ -62,7 +95,7 @@ def preguntar_carrera(message):#esta funcion contiene la respuesta anterior
         markup.add("Ing. Informatica", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
         #se pregunta por el curso
         msg = bot.send_message(message.chat.id, "¿Que Carrera?", reply_markup=markup)
-        bot.register_next_step_handler(msg, guardar_datos_usuario) #se guaradaran los datos en una funcion con este nombre
+        bot.register_next_step_handler(msg, guardar_datos_usuario) #se guaradaran los datos en una funcion con este nombre"""
 
 
 def guardar_datos_usuario(message):
