@@ -49,7 +49,7 @@ def guardar_datos_usuario(message):
     usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
-    if message.text != "Ing. Informática" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+    if usuarios[message.chat.id]["carrera"] != "Ing. Informática" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
         #se informa del error y se vuelve a preguntar
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
         #se vuelve a ejecutar la funcion
