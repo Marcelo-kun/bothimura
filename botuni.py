@@ -51,7 +51,7 @@ def guardar_datos_usuario(message):
     #si la carrera introducida no es valido
     if usuarios[message.chat.id]["carrera"] == "Ing. Informática": #and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
         
-        if usuarios[message.chat.id]["curso"] == message.text:
+        if usuarios[message.chat.id]["curso"] == "1":
             usuarios[message.chat.id]["cuota"] == "500.000Gs"
     else: 
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
