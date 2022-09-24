@@ -52,6 +52,15 @@ def preguntar_curso(message):
 
 def guardar_datos_usuario(message):
     usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
+    ##############################################
+    markup = ReplyKeyboardMarkup(
+        input_field_placeholder="Pulsa un boton",
+        resize_keyboard=True,
+        row_width=5
+        )
+    markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho")
+    msg = bot.send_message(message.chat.id, "¿Cual es tu Carrera?", reply_markup=markup)
+    bot.register_next_step_handler(msg, guardar_datos_usuario)
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
     if usuarios[message.chat.id]["carrera"] == "Ing. Informática": #and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
