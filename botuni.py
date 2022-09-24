@@ -65,11 +65,11 @@ def guardar_datos_usuario(message):
             usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
             usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
             texto = 'Datos introducidos:\n'
-            texto+= f'<u>Nombre...........:</u> \n{usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso............:</u> \n{usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera..........:</u> \n{usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<u>Cuotas...........:</u> \n{usuarios[message.chat.id]["cuota"]}\n'
-            texto+= f'<u>Derecho de Exámen:</u> \n{usuarios[message.chat.id]["Derecho de Examen"]}\n'
+            texto+= f'<b>Nombre...........:</b> \n{usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<b>Curso............:</b> \n{usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<b>Carrera..........:</b> \n{usuarios[message.chat.id]["carrera"]}\n'
+            texto+= f'<b>Cuotas...........:</b> \n{usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<b>Derecho de Exámen:</b> \n{usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
