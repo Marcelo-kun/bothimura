@@ -31,7 +31,7 @@ def bot_inicio(message):
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup) #pregunta el nombre del usuario
     bot.register_next_step_handler(msg, preguntar_carrera) #se registra respuesta en una funcion
 
-###############botones de seleccion#######################################
+###############botones de seleccion############33
 def preguntar_carrera(message): 
     usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
     usuarios[message.chat.id]["nombre"] = message.text #se guarda nombre dentro del diccionario vacio
@@ -59,12 +59,7 @@ def guardar_datos_usuario(message):
     usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
-    if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
-        msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
-        #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, preguntar_carrera)
-    
-    elif usuarios[message.chat.id]["carrera"] == "Ing. Informática":
+    if usuarios[message.chat.id]["carrera"] == "Ing. Informática":
         
         if usuarios[message.chat.id]["curso"] == "1er Curso":
             usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
@@ -795,16 +790,11 @@ def guardar_datos_usuario(message):
             print(usuarios) #para que se vea en terminal
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
-    """elif message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
-        msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
-        #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, preguntar_curso)
-        #se informa del error y se vuelve a preguntar
-    else:
-        msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
-        #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, preguntar_carrera)
-        #se informa del error y se vuelve a preguntar"""
+        else: 
+            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+            #se vuelve a ejecutar la funcion
+            bot.register_next_step_handler(msg, preguntar_curso)
+            #se informa del error y se vuelve a preguntar
 
 
 @bot.message_handler(commands=['carreras'])
