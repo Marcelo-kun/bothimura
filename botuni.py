@@ -796,60 +796,6 @@ def guardar_datos_usuario(message):
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
 
-#codigo con botones################################
-"""def preguntar_curso(message): 
-    usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
-    usuarios[message.chat.id]["nombre"] = message.text #se guarda nombre dentro del diccionario vacio
-    markup = ReplyKeyboardMarkup(
-        input_field_placeholder="Pulsa un boton",
-        resize_keyboard=True,
-        row_width=5
-        )
-    markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
-    msg = bot.send_message(message.chat.id, "¿Curso?", reply_markup=markup)
-    bot.register_next_step_handler(msg, preguntar_carrera)
-
-def preguntar_carrera(message):#esta funcion contiene la respuesta anterior
-    if  message.text.isdigit(): #el metodo isdigit nos devuelve un True si el contenido es un nro
-        #informar del error
-        markup = ForceReply()
-        msg = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?")
-        #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, preguntar_carrera)
-    else: #si se introdujo el curso correcto
-        #se definiran botones
-        usuarios[message.chat.id]["curso"] = message.text #en la clave curso se guarda los datos introducidos
-        markup = ReplyKeyboardMarkup( 
-            input_field_placeholder="Pulsa un boton", #argumento que indicara la accion que se debe realizar
-            resize_keyboard=True, #argumento para reescalar el teclado
-            row_width=2 # nro de botones en cada fila
-            )
-        #añadir botones
-        markup.add("Ing. Informatica", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho" )
-        #se pregunta por el curso
-        msg = bot.send_message(message.chat.id, "¿Que Carrera?", reply_markup=markup)
-        bot.register_next_step_handler(msg, guardar_datos_usuario) #se guaradaran los datos en una funcion con este nombre"""
-
-
-"""def guardar_datos_usuario(message):
-    #guardamos los datos introducidos por el usuario
-    #si la carrera introducida no es valido
-    if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
-        #se informa del error y se vuelve a preguntar
-        msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
-        #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, guardar_datos_usuario)
-    else: #si la cerrrera introducida es valida
-        usuarios[message.chat.id]["carrera"] = message.text
-        #se crea una variable tipo string donde se guarda una cadena de texto en la que se indica los datos introducidos formateando la salida
-        texto = 'Datos introducidos:\n'
-        texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-        texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-        texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-        markup = ReplyKeyboardRemove()
-        bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
-        print(usuarios) #para que se vea en terminal
-        del usuarios[message.chat.id] #se elimina los datos del diccinario"""
 
 @bot.message_handler(commands=['carreras'])
 def carreras_command(message):
