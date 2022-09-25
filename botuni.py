@@ -64,7 +64,7 @@ def guardar_datos_usuario(message):
         if usuarios[message.chat.id]["curso"] == "1er Curso":
             usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
             usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            texto = 'Datos introducidos:\n'
+            texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
             texto+= f'<u>Carrera:</u>{usuarios[message.chat.id]["carrera"]}\n'
