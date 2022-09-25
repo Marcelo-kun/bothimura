@@ -44,8 +44,29 @@ def preguntar_carrera(message):
     msg = bot.send_message(message.chat.id, "¿Cual es tu Carrera?", reply_markup=markup)
     bot.register_next_step_handler(msg, preguntar_curso) #se registra respuesta en una funcion
 
-def preguntar_curso(message):
-    usuarios[message.chat.id]["carrera"] = message.text #se guarda curso dentro del diccionario vacio
+def preguntar_curso(message):#esta funcion contiene la respuesta anterior
+####################################Compara el dato ingresado si es valido########################################################################
+    if  message.text.isdigit(): #el metodo isdigit nos devuelve un True si el contenido es un nro
+        #informar del error
+        markup = ForceReply()
+        msg = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?")
+        #se vuelve a ejecutar la funcion
+        bot.register_next_step_handler(msg, preguntar_carrera)
+    else: #si se introdujo el curso correcto
+        #se definiran botones
+        usuarios[message.chat.id]["carrera"] = message.text #en la clave curso se guarda los datos introducidos
+        markup = ReplyKeyboardMarkup( 
+            input_field_placeholder="Pulsa un boton", #argumento que indicara la accion que se debe realizar
+            resize_keyboard=True, #argumento para reescalar el teclado
+            row_width=5 # nro de botones en cada fila
+            )
+        #añadir botones
+        markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
+        #se pregunta por el curso
+        msg = bot.send_message(message.chat.id, "¿Cual es tu Curso?", reply_markup=markup)
+        bot.register_next_step_handler(msg, guardar_datos_usuario) #se guaradaran los datos en una funcion con este nombre"""
+############################################################################################################    
+    """usuarios[message.chat.id]["carrera"] = message.text #se guarda curso dentro del diccionario vacio
     markup = ReplyKeyboardMarkup(
         input_field_placeholder="Pulsa un boton",
         resize_keyboard=True,
@@ -53,7 +74,7 @@ def preguntar_curso(message):
         )
     markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
     msg = bot.send_message(message.chat.id, "¿Cual es tu Curso?", reply_markup=markup)
-    bot.register_next_step_handler(msg, guardar_datos_usuario) #se registra respuesta en una funcion
+    bot.register_next_step_handler(msg, guardar_datos_usuario) #se registra respuesta en una funcion"""
 
 def guardar_datos_usuario(message):
     usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
