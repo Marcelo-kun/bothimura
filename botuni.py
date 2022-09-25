@@ -14,7 +14,7 @@ bot = telebot.TeleBot(API_TOKEN)
 #instancia de bot de Telegram
 server = Flask(__name__)
 #varaible global donde se guardaran los datos del usuario 
-usuarios = {} #se crea un diccionario vacio
+usuarios = {} #se crea un diccionario vacio para cargar los datos de usuario de manera global
 
 #responde al comando /start
 @bot.message_handler(commands=['start'])
@@ -31,7 +31,7 @@ def bot_inicio(message):
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup) #pregunta el nombre del usuario
     bot.register_next_step_handler(msg, preguntar_carrera) #se registra respuesta en una funcion
 
-###############botones de seleccion############33
+###############botones de seleccion############
 def preguntar_carrera(message): 
     usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
     usuarios[message.chat.id]["nombre"] = message.text #se guarda nombre dentro del diccionario vacio
@@ -845,9 +845,9 @@ def webhook():
 if __name__ + '__main__':
     bot.set_my_commands([
         # se crea un menu en la parte inferior izquierdo de la interfaz de Telegram
-        telebot.types.BotCommand("/start", "Da inicio al bot"),
-        telebot.types.BotCommand("/inicio", "Breve presentacion del Usuario al bot"),
-        telebot.types.BotCommand("/carreras", "Lista de carreras que ofrece la Universidad"),
-        telebot.types.BotCommand("/botones", "Enlaces de interes"),
+        telebot.types.BotCommand("/start", "Permite dar inicio al bot con una breve presentación y otras recomendaciones"),
+        telebot.types.BotCommand("/inicio", "Permite generar una lista de información estudiantil"),
+        telebot.types.BotCommand("/carreras", "Permite presentar una lista de carreras que ofrece la Universidad"),
+        telebot.types.BotCommand("/botones", "Enlace de interes académico"),
     ])
     server.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
