@@ -59,7 +59,12 @@ def guardar_datos_usuario(message):
     usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
-    if usuarios[message.chat.id]["carrera"] == "Ing. Informática":
+    if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+        msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+        #se vuelve a ejecutar la funcion
+        bot.register_next_step_handler(msg, preguntar_curso)
+    
+    elif usuarios[message.chat.id]["carrera"] == "Ing. Informática":
         
         if usuarios[message.chat.id]["curso"] == "1er Curso":
             usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
@@ -790,7 +795,7 @@ def guardar_datos_usuario(message):
             print(usuarios) #para que se vea en terminal
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
-    elif message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+    """elif message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
         msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
         #se vuelve a ejecutar la funcion
         bot.register_next_step_handler(msg, preguntar_curso)
@@ -799,7 +804,7 @@ def guardar_datos_usuario(message):
         msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
         #se vuelve a ejecutar la funcion
         bot.register_next_step_handler(msg, preguntar_carrera)
-        #se informa del error y se vuelve a preguntar
+        #se informa del error y se vuelve a preguntar"""
 
 
 @bot.message_handler(commands=['carreras'])
