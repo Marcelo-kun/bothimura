@@ -844,9 +844,9 @@ def webhook():
 if __name__ + '__main__':
     bot.set_my_commands([
         # se crea un menu en la parte inferior izquierdo de la interfaz de Telegram
-        telebot.types.BotCommand("/start", "Inicia el bot con una breve presentación y otras recomendaciones"),
+        telebot.types.BotCommand("/start", "Inicia el bot con una presentación y recomendaciones"),
         telebot.types.BotCommand("/infor", "Genera una lista de información estudiantil"),
-        telebot.types.BotCommand("/carreras", "Permite presentar una lista de carreras que ofrece la Universidad"),
+        telebot.types.BotCommand("/carreras", "Presenta una lista de carreras de la Universidad"),
         telebot.types.BotCommand("/botones", "Enlace de interes académico"),
     ])
     server.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
