@@ -30,7 +30,6 @@ def bot_inicio(message):
     markup = ForceReply()
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup) #pregunta el nombre del usuario
     bot.register_next_step_handler(msg, preguntar_carrera) #se registra respuesta en una funcion
-
 ###############botones de seleccion############
 def preguntar_carrera(message): 
     usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
@@ -43,7 +42,6 @@ def preguntar_carrera(message):
     markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho")
     msg = bot.send_message(message.chat.id, "¿Cual es tu Carrera?", reply_markup=markup)
     bot.register_next_step_handler(msg, preguntar_curso) #se registra respuesta en una funcion
-
 def preguntar_curso(message):#esta funcion contiene la respuesta anterior    
     usuarios[message.chat.id]["carrera"] = message.text #se guarda curso dentro del diccionario vacio
     markup = ReplyKeyboardMarkup(
@@ -54,13 +52,11 @@ def preguntar_curso(message):#esta funcion contiene la respuesta anterior
     markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
     msg = bot.send_message(message.chat.id, "¿Cual es tu Curso?", reply_markup=markup)
     bot.register_next_step_handler(msg, guardar_datos_usuario) #se registra respuesta en una funcion
-
 def guardar_datos_usuario(message):
     usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
     if usuarios[message.chat.id]["carrera"] == "Ing. Informática":
-        
         if usuarios[message.chat.id]["curso"] == "1er Curso":
             usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
             usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
@@ -149,7 +145,7 @@ def guardar_datos_usuario(message):
         else: 
             msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
             #se vuelve a ejecutar la funcion
-            bot.register_next_step_handler(msg, preguntar_curso)
+            bot.register_next_step_handler(msg, preguntar_carrera)
             #se informa del error y se vuelve a preguntar
 #####################################################Ing. Comercial######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Ing. Comercial":
@@ -241,7 +237,7 @@ def guardar_datos_usuario(message):
         else: 
             msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
             #se vuelve a ejecutar la funcion
-            bot.register_next_step_handler(msg, preguntar_curso)
+            bot.register_next_step_handler(msg, preguntar_carrera)
             #se informa del error y se vuelve a preguntar
 #####################################################Ing. en Marketing y Publicidad##########################################################################
     elif usuarios[message.chat.id]["carrera"] == "Ing. en Marketing y Publicidad":
