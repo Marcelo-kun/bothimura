@@ -795,6 +795,11 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
+    else: 
+            msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
+            #se vuelve a ejecutar la funcion
+            bot.register_next_step_handler(msg, preguntar_carrera)
+            #se informa del error y se vuelve a preguntar
 
 
 @bot.message_handler(commands=['carreras'])
