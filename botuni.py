@@ -790,11 +790,16 @@ def guardar_datos_usuario(message):
             print(usuarios) #para que se vea en terminal
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
-        else: 
-            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
-            #se vuelve a ejecutar la funcion
-            bot.register_next_step_handler(msg, preguntar_curso)
-            #se informa del error y se vuelve a preguntar
+    elif message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+        msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+        #se vuelve a ejecutar la funcion
+        bot.register_next_step_handler(msg, preguntar_curso)
+        #se informa del error y se vuelve a preguntar
+    else:
+        msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
+        #se vuelve a ejecutar la funcion
+        bot.register_next_step_handler(msg, preguntar_carrera)
+        #se informa del error y se vuelve a preguntar
 
 
 @bot.message_handler(commands=['carreras'])
