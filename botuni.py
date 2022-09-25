@@ -68,7 +68,7 @@ def guardar_datos_usuario(message):
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u>{usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -80,11 +80,16 @@ def guardar_datos_usuario(message):
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -92,11 +97,16 @@ def guardar_datos_usuario(message):
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -104,11 +114,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -116,11 +131,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -134,12 +154,17 @@ def guardar_datos_usuario(message):
 #####################################################Ing. Comercial######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Ing. Comercial":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "500.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -147,11 +172,16 @@ def guardar_datos_usuario(message):
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -159,11 +189,16 @@ def guardar_datos_usuario(message):
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -171,11 +206,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -183,11 +223,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -201,12 +246,17 @@ def guardar_datos_usuario(message):
 #####################################################Ing. en Marketing y Publicidad##########################################################################
     elif usuarios[message.chat.id]["carrera"] == "Ing. en Marketing y Publicidad":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "500.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -214,11 +264,16 @@ def guardar_datos_usuario(message):
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -226,11 +281,16 @@ def guardar_datos_usuario(message):
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -238,11 +298,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -250,15 +315,21 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
             del usuarios[message.chat.id] #se elimina los datos del diccinario
+
         else: 
             msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
             #se vuelve a ejecutar la funcion
@@ -267,12 +338,17 @@ def guardar_datos_usuario(message):
 #####################################################Lic. en Ciencias Contables######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Lic. en Ciencias Contables":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "500.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -280,11 +356,16 @@ def guardar_datos_usuario(message):
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -292,11 +373,16 @@ def guardar_datos_usuario(message):
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -304,11 +390,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -316,11 +407,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -334,12 +430,17 @@ def guardar_datos_usuario(message):
 #####################################################Lic. en Ciencias de la Educación######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Lic. en Ciencias de la Educación":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "500.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -347,11 +448,16 @@ def guardar_datos_usuario(message):
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -359,11 +465,16 @@ def guardar_datos_usuario(message):
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -371,11 +482,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -383,11 +499,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -401,12 +522,17 @@ def guardar_datos_usuario(message):
 #####################################################Lic. en Enfermería######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Lic. en Enfermería":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "500.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -414,11 +540,16 @@ def guardar_datos_usuario(message):
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -426,11 +557,16 @@ def guardar_datos_usuario(message):
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -438,11 +574,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -450,11 +591,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -468,12 +614,17 @@ def guardar_datos_usuario(message):
 #####################################################Lic. en Psicología######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Lic. en Psicología":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "500.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -481,11 +632,16 @@ def guardar_datos_usuario(message):
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -493,11 +649,16 @@ def guardar_datos_usuario(message):
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -505,11 +666,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -517,11 +683,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -535,12 +706,17 @@ def guardar_datos_usuario(message):
 #####################################################Derecho######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Derecho":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "500.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso:</u>  {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -548,11 +724,16 @@ def guardar_datos_usuario(message):
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -560,11 +741,16 @@ def guardar_datos_usuario(message):
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -572,11 +758,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -584,11 +775,16 @@ def guardar_datos_usuario(message):
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
             usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            texto = 'Datos introducidos:\n'
-            texto+= f'<code>Nombre.:</code> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<code>Curso..:</code> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<code>Carrera:</code> {usuarios[message.chat.id]["carrera"]}\n'
-            texto+= f'<code>Cuota..:</code> {usuarios[message.chat.id]["cuota"]}\n'
+            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
+            texto = '<b>Datos introducidos:</b>\n'
+            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>Resultados:</b>\n'
+            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -599,12 +795,6 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
-
-    else: 
-        msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
-    #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, bot_inicio)
-        #se informa del error y se vuelve a preguntar
 
 #codigo con botones################################
 """def preguntar_curso(message): 
