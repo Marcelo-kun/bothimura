@@ -61,7 +61,7 @@ def guardar_datos_usuario(message):
         markup = ForceReply()
         msg = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?")
         #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, preguntar_curso)
+        bot.register_next_step_handler(msg, guardar_datos_usuario)
 
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
