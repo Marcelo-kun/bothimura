@@ -34,15 +34,22 @@ def bot_inicio(message):
 
 def preguntar_carrera(message): 
     usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
-    usuarios[message.chat.id]["nombre"] = message.text #se guarda nombre dentro del diccionario vacio
-    markup = ReplyKeyboardMarkup(
-        input_field_placeholder="Pulsa un boton",
-        resize_keyboard=True,
-        row_width=2
-        )
-    markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho")
-    msg = bot.send_message(message.chat.id, "¿Cual es tu Carrera?", reply_markup=markup)
-    bot.register_next_step_handler(msg, preguntar_curso) #se registra respuesta en una funcion
+    if  message.text.isdigit(): #el metodo isdigit nos devuelve un True si el contenido es un nro
+        #informar del error
+        markup = ForceReply()
+        msg = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?")
+        #se vuelve a ejecutar la funcion
+        bot.register_next_step_handler(msg, preguntar_carrera)
+    else:
+        usuarios[message.chat.id]["nombre"] = message.text #se guarda nombre dentro del diccionario vacio
+        markup = ReplyKeyboardMarkup(
+            input_field_placeholder="Pulsa un boton",
+            resize_keyboard=True,
+            row_width=2
+            )
+        markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho")
+        msg = bot.send_message(message.chat.id, "¿Cual es tu Carrera?", reply_markup=markup)
+        bot.register_next_step_handler(msg, preguntar_curso) #se registra respuesta en una funcion
 
 def preguntar_curso(message):#esta funcion contiene la respuesta anterior
 ############################################################################################################
@@ -51,7 +58,7 @@ def preguntar_curso(message):#esta funcion contiene la respuesta anterior
         markup = ForceReply()
         msg = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?")
         #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, preguntar_carrera)
+        bot.register_next_step_handler(msg, preguntar_curso)
     else: #si se introdujo el curso correcto
         #se definiran botones
         usuarios[message.chat.id]["carrera"] = message.text #en la clave curso se guarda los datos introducidos
