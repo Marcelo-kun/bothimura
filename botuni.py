@@ -45,7 +45,7 @@ def preguntar_carrera(message):
     bot.register_next_step_handler(msg, preguntar_curso) #se registra respuesta en una funcion
 
 def preguntar_curso(message):#esta funcion contiene la respuesta anterior
-####################################Compara el dato ingresado si es valido########################################################################
+############################################################################################################
     if  message.text.isdigit(): #el metodo isdigit nos devuelve un True si el contenido es un nro
         #informar del error
         markup = ForceReply()
