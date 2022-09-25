@@ -30,8 +30,8 @@ def bot_inicio(message):
     markup = ForceReply()
     msg = bot.send_message(message.chat.id, "¿Como te llamas?", reply_markup=markup) #pregunta el nombre del usuario
     bot.register_next_step_handler(msg, preguntar_carrera) #se registra respuesta en una funcion
-###codigo de prueba sin botones#############
 
+###############botones de seleccion#######################################
 def preguntar_carrera(message): 
     usuarios[message.chat.id] = {} #se utiliza el diccionario usuarios y como clave el chat.id y dentro de esta clave vamos a guardar un diccionario vacio 
     usuarios[message.chat.id]["nombre"] = message.text #se guarda nombre dentro del diccionario vacio
@@ -56,16 +56,10 @@ def preguntar_curso(message):#esta funcion contiene la respuesta anterior
     bot.register_next_step_handler(msg, guardar_datos_usuario) #se registra respuesta en una funcion
 
 def guardar_datos_usuario(message):
-    if  message.text.isdigit(): #el metodo isdigit nos devuelve un True si el contenido es un nro
-        #informar del error
-        markup = ForceReply()
-        msg = bot.send_message(message.chat.id, "Error: No indicar en nros \n¿Curso?")
-        #se vuelve a ejecutar la funcion
-        bot.register_next_step_handler(msg, guardar_datos_usuario)
-
+    usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
     #guardamos los datos introducidos por el usuario
     #si la carrera introducida no es valido
-    elif usuarios[message.chat.id]["carrera"] == "Ing. Informática":
+    if usuarios[message.chat.id]["carrera"] == "Ing. Informática":
         
         if usuarios[message.chat.id]["curso"] == "1er Curso":
             usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
