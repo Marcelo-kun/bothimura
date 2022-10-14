@@ -61,13 +61,13 @@ def guardar_datos_usuario(message):
     #si la carrera introducida no es valido
     if usuarios[message.chat.id]["carrera"] == "Ing. Informática":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 300.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera..:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -78,13 +78,13 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            usuarios[message.chat.id]["cuota"] = "350.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -95,9 +95,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            usuarios[message.chat.id]["cuota"] = "400.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -112,9 +112,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            usuarios[message.chat.id]["cuota"] = "450.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -129,8 +129,8 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -153,8 +153,8 @@ def guardar_datos_usuario(message):
 #####################################################Ing. Comercial######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Ing. Comercial":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 300.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -170,13 +170,13 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            usuarios[message.chat.id]["cuota"] = "350.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -187,9 +187,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            usuarios[message.chat.id]["cuota"] = "400.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -204,9 +204,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            usuarios[message.chat.id]["cuota"] = "450.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -221,8 +221,8 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -242,11 +242,12 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
+
 #####################################################Ing. en Marketing y Publicidad##########################################################################
     elif usuarios[message.chat.id]["carrera"] == "Ing. en Marketing y Publicidad":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 300.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -262,13 +263,13 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            usuarios[message.chat.id]["cuota"] = "350.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -279,9 +280,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            usuarios[message.chat.id]["cuota"] = "400.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -296,9 +297,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            usuarios[message.chat.id]["cuota"] = "450.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -313,8 +314,8 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -334,11 +335,12 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
+        
 #####################################################Lic. en Ciencias Contables######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Lic. en Ciencias Contables":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 300.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -354,13 +356,13 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            usuarios[message.chat.id]["cuota"] = "350.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -371,9 +373,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            usuarios[message.chat.id]["cuota"] = "400.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -388,9 +390,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            usuarios[message.chat.id]["cuota"] = "450.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -405,8 +407,8 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -426,11 +428,12 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
+        
 #####################################################Lic. en Ciencias de la Educación######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Lic. en Ciencias de la Educación":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 300.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -446,13 +449,13 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            usuarios[message.chat.id]["cuota"] = "350.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -463,9 +466,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            usuarios[message.chat.id]["cuota"] = "400.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -480,9 +483,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            usuarios[message.chat.id]["cuota"] = "450.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -497,8 +500,8 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -518,11 +521,12 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
+        
 #####################################################Lic. en Enfermería######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Lic. en Enfermería":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 300.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -538,13 +542,13 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            usuarios[message.chat.id]["cuota"] = "350.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -555,9 +559,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            usuarios[message.chat.id]["cuota"] = "400.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -572,9 +576,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            usuarios[message.chat.id]["cuota"] = "450.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -589,8 +593,8 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -610,11 +614,12 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
+        
 #####################################################Lic. en Psicología######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Lic. en Psicología":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 300.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -630,13 +635,13 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            usuarios[message.chat.id]["cuota"] = "350.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -647,9 +652,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            usuarios[message.chat.id]["cuota"] = "400.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -664,9 +669,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            usuarios[message.chat.id]["cuota"] = "450.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -681,8 +686,8 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -702,11 +707,12 @@ def guardar_datos_usuario(message):
             #se vuelve a ejecutar la funcion
             bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar
+        
 #####################################################Derecho######################################################################################
     elif usuarios[message.chat.id]["carrera"] == "Derecho":
         if usuarios[message.chat.id]["curso"] == "1er Curso":
-            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 500.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "12 Cuotas de 300.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "Matrícula Gratuita"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
@@ -722,13 +728,13 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
             
         elif usuarios[message.chat.id]["curso"] == "2do Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "200.000Gs"
+            usuarios[message.chat.id]["cuota"] = "350.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<u>Curso.....:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera...:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
             texto+= f'<b>Resultados:</b>\n'
             texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
             texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
@@ -739,9 +745,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
         
         elif usuarios[message.chat.id]["curso"] == "3er Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "250.000Gs"
+            usuarios[message.chat.id]["cuota"] = "400.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -756,9 +762,9 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "4to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
-            usuarios[message.chat.id]["Matrícula"] = "300.000Gs"
+            usuarios[message.chat.id]["cuota"] = "450.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
+            usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
             texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
@@ -773,8 +779,8 @@ def guardar_datos_usuario(message):
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
         elif usuarios[message.chat.id]["curso"] == "5to Curso":
-            usuarios[message.chat.id]["cuota"] = "600.000Gs"
-            usuarios[message.chat.id]["Derecho de Examen"] = "50.000Gs"
+            usuarios[message.chat.id]["cuota"] = "500.000Gs"
+            usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
             texto = '<b>Datos introducidos:</b>\n'
             texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
