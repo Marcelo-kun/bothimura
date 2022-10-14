@@ -782,14 +782,14 @@ def guardar_datos_usuario(message):
             usuarios[message.chat.id]["cuota"] = "500.000Gs"
             usuarios[message.chat.id]["Derecho de Examen"] = "40.000Gs"
             usuarios[message.chat.id]["Matrícula"] = "350.000Gs"
-            texto = '<b>Datos introducidos:</b>\n'
-            texto+= f'<u>Nombre.:</u> {usuarios[message.chat.id]["nombre"]}\n'
-            texto+= f'<u>Curso..:</u> {usuarios[message.chat.id]["curso"]}\n'
-            texto+= f'<u>Carrera:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
-            texto+= f'<b>Resultados:</b>\n'
-            texto+= f'<u>Matrícula:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
-            texto+= f'<u>Cuotas:</u> {usuarios[message.chat.id]["cuota"]}\n'
-            texto+= f'<u>Derecho de Exámen:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
+            texto = '<b>Datos introducidos🤖:</b>\n'
+            texto+= f'<u>Nombre📝:</u> {usuarios[message.chat.id]["nombre"]}\n'
+            texto+= f'<u>Curso🎓:</u> {usuarios[message.chat.id]["curso"]}\n'
+            texto+= f'<u>Carrera🏛️:</u> {usuarios[message.chat.id]["carrera"]}\n\n'
+            texto+= f'<b>👩‍🎓Resultados👨‍🎓:</b>\n'
+            texto+= f'<u>Matrícula👉:</u> {usuarios[message.chat.id]["Matrícula"]}\n'
+            texto+= f'<u>Cuotas👉:</u> {usuarios[message.chat.id]["cuota"]}\n'
+            texto+= f'<u>Derecho de Exámen👉:</u> {usuarios[message.chat.id]["Derecho de Examen"]}\n'
             markup = ReplyKeyboardRemove()
             bot.send_message(message.chat.id, texto, parse_mode="html", reply_markup=markup)
             print(usuarios) #para que se vea en terminal
@@ -851,7 +851,7 @@ if __name__ + '__main__':
     bot.set_my_commands([
         # se crea un menu en la parte inferior izquierdo de la interfaz de Telegram
         telebot.types.BotCommand("/start", "Inicia el bot con unas recomendaciones"),
-        telebot.types.BotCommand("/infor", "Genera una lista de información estudiantil"),
+        telebot.types.BotCommand("/infor", "Consulta importe de cuotas"),
         telebot.types.BotCommand("/carreras", "Lista de carreras habilitadas"),
         telebot.types.BotCommand("/botones", "Enlace de interes académico"),
     ])
