@@ -42,8 +42,7 @@ def preguntar_carrera(message):
         )
     markup.add("Ing. Informática", "Ing. Comercial", "Ing. en Marketing y Publicidad", "Lic. en Ciencias Contables", "Lic. en Ciencias de la Educación", "Lic. en Enfermería", "Lic. en Psicología", "Derecho")
     msg = bot.send_message(message.chat.id, "¿Cual es tu Carrera?", reply_markup=markup)
-            
-
+    bot.register_next_step_handler(msg, preguntar_curso)
             #se informa del error y se vuelve a preguntar 
     """if usuarios[message.chat.id]["carrera"] != "Ing. Informática" or usuarios[message.chat.id]["carrera"] != "Ing. Comercial"  or usuarios[message.chat.id]["carrera"] != "Ing. en Marketing y Publicidad" or usuarios[message.chat.id]["carrera"] != "Lic. en Ciencias Contables" or usuarios[message.chat.id]["carrera"] != "Lic. en Ciencias de la Educación" or usuarios[message.chat.id]["carrera"] != "Lic. en Enfermería" or usuarios[message.chat.id]["carrera"] != "Lic. en Psicología" or usuarios[message.chat.id]["carrera"] != "Derecho":
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
