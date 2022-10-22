@@ -55,7 +55,7 @@ def preguntar_carrera(message):
 
 def preguntar_curso(message):#esta funcion contiene la respuesta anterior    
     usuarios[message.chat.id]["carrera"] = message.text #se guarda curso dentro del diccionario vacio
-    if message.text != "Ing. Informatica" and message.text != "Ing. Comercial" and message.text != "Ing. en Marketing y Publicidad" and message.text != "Lic. en Ciencias Contables" and message.text != "Lic. en Ciencias de la Educación" and message.text != "Lic. en Enfermería" and message.text != "Lic. en Psicología" and message.text != "Derecho":
+    if usuarios[message.chat.id]["carrera"] != "Ing. Informatica" and usuarios[message.chat.id]["carrera"] != "Ing. Comercial" and usuarios[message.chat.id]["carrera"] != "Ing. en Marketing y Publicidad" and usuarios[message.chat.id]["carrera"] != "Lic. en Ciencias Contables" and usuarios[message.chat.id]["carrera"] != "Lic. en Ciencias de la Educación" and usuarios[message.chat.id]["carrera"] != "Lic. en Enfermería" and usuarios[message.chat.id]["carrera"] != "Lic. en Psicología" and usuarios[message.chat.id]["carrera"] != "Derecho":
         msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
         bot.register_next_step_handler(msg, preguntar_carrera)  
     else:
