@@ -57,8 +57,8 @@ def preguntar_carrera(message):
         #se vuelve a ejecutar la funcion
         bot.register_next_step_handler(msg, preguntar_carrera)
         #se informa del error y se vuelve a preguntar
-    else:"""
-    bot.register_next_step_handler(msg, preguntar_curso) #se registra respuesta en una funcion
+    else:
+    bot.register_next_step_handler(msg, preguntar_curso) #se registra respuesta en una funcion """
 
 def preguntar_curso(message):#esta funcion contiene la respuesta anterior    
     usuarios[message.chat.id]["carrera"] = message.text #se guarda curso dentro del diccionario vacio
