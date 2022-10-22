@@ -56,9 +56,6 @@ def preguntar_carrera(message):
 def preguntar_curso(message):#esta funcion contiene la respuesta anterior    
     usuarios[message.chat.id]["carrera"] = message.text #se guarda curso dentro del diccionario vacio
     if usuarios[message.chat.id]["carrera"] != "Ing. Informatica" or usuarios[message.chat.id]["carrera"] != "Ing. Comercial" or usuarios[message.chat.id]["carrera"] != "Ing. en Marketing y Publicidad" or usuarios[message.chat.id]["carrera"] != "Lic. en Ciencias Contables" or usuarios[message.chat.id]["carrera"] != "Lic. en Ciencias de la Educación" or usuarios[message.chat.id]["carrera"] != "Lic. en Enfermería" or usuarios[message.chat.id]["carrera"] != "Lic. en Psicología" or usuarios[message.chat.id]["carrera"] != "Derecho":
-        msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
-        bot.register_next_step_handler(msg, preguntar_carrera)  
-    else:
         markup = ReplyKeyboardMarkup(
         input_field_placeholder="Pulsa un boton",
         resize_keyboard=True,
@@ -67,6 +64,10 @@ def preguntar_curso(message):#esta funcion contiene la respuesta anterior
         markup.add("1er Curso", "2do Curso", "3er Curso", "4to Curso", "5to Curso")
         msg = bot.send_message(message.chat.id, "¿Cual es tu Curso?", reply_markup=markup)
         bot.register_next_step_handler(msg, guardar_datos_usuario) #se registra respuesta en una funcion
+    else:
+        msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
+        bot.register_next_step_handler(msg, preguntar_carrera) 
+
 
 def guardar_datos_usuario(message):
     usuarios[message.chat.id]["curso"] = message.text #se guarda curso dentro del diccionario vacio
