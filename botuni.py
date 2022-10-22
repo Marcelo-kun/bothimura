@@ -795,11 +795,11 @@ def guardar_datos_usuario(message):
             print(usuarios) #para que se vea en terminal
             del usuarios[message.chat.id] #se elimina los datos del diccinario
 
-        else: 
-            msg = bot.send_message(message.chat.id, "Error: Curso no valido.\n Pulsa un boton")
-            #se vuelve a ejecutar la funcion
-            bot.register_next_step_handler(msg, preguntar_curso)
-            #se informa del error y se vuelve a preguntar
+    else: 
+        msg = bot.send_message(message.chat.id, "Error: Carrera no valida.\n Pulsa un boton")
+        #se vuelve a ejecutar la funcion
+        bot.register_next_step_handler(msg, preguntar_carrera)
+        #se informa del error y se vuelve a preguntar
 
 
 @bot.message_handler(commands=['carreras'])
