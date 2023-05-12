@@ -9,7 +9,7 @@ from telebot.types import ReplyKeyboardMarkup, ReplyKeyboardRemove #para crear b
 
         
 
-API_TOKEN  = '5526189505:AAGV3T6-SIgRa_mo1JrZsMkmdV5wjakklLM'
+API_TOKEN  = 'API_TOKEN'
 bot = telebot.TeleBot(API_TOKEN)
 #instancia de bot de Telegram
 server = Flask(__name__)
